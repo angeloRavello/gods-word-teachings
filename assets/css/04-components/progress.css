@@ -1,0 +1,13 @@
+/*
+ * progress.css
+ * Discreet "3 / 10" indicator, always in the top-right corner.
+ * Defines: .progress
+ */
+.progress {
+  position: fixed;
+  top: var(--safe-y);
+  right: var(--safe-x);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-title);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TÍTULO DE LA PRESENTACIÓN</title>
+
+  <link rel="stylesheet" href="../assets/css/01-tokens.css">
+  <link rel="stylesheet" href="../assets/css/02-base.css">
+  <link rel="stylesheet" href="../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../assets/css/04-components/slide.css">
+  <link rel="stylesheet" href="../assets/css/04-components/verse-card.css">
+  <link rel="stylesheet" href="../assets/css/04-components/meaning-box.css">
+  <link rel="stylesheet" href="../assets/css/04-components/bullet-list.css">
+  <link rel="stylesheet" href="../assets/css/04-components/progress.css">
+  <link rel="stylesheet" href="../assets/css/05-utilities.css">
+  <link rel="stylesheet" href="../assets/css/06-animations.css">
+  <!-- Opcional, solo para excepciones reales: <link rel="stylesheet" href="presentation.css"> -->
+
+  <script defer src="../assets/js/core/namespace.js"></script>
+  <script defer src="../assets/js/core/keys.js"></script>
+  <script defer src="../assets/js/modules/deck.js"></script>
+  <script defer src="../assets/js/modules/fragments.js"></script>
+  <script defer src="../assets/js/modules/focus.js"></script>
+  <script defer src="../assets/js/modules/progress.js"></script>
+  <script defer src="../assets/js/modules/preload.js"></script>
+  <script defer src="../assets/js/pages/presentation.js"></script>
+</head>
+<body data-home-url="../">
+<main class="deck">
+
+  <!-- Portada -->
+  <section class="slide slide--cover" data-slide>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/bible.svg" alt="">
+      </div>
+      <div class="media__content">
+        <h1 class="slide__cover-title">Título</h1>
+        <p class="slide__subtitle">Subtítulo</p>
+      </div>
+    </div>
+    <p class="slide__note">Textos bíblicos: Nueva Traducción Viviente (NTV) y Reina-Valera 1960 (RVR1960). Avisos de derechos al final.</p>
+  </section>
+
+  <!-- Punto: idea + referencia (una ilustración como máximo) -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">1. Idea del punto</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/heart.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Frase corta con <strong class="key">1-3 palabras clave</strong>.
+          <span class="ref">Libro 1:1</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Punto: lectura NTV (mismo título) -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">1. Idea del punto</h2>
+    </header>
+    <div class="slide__body">
+      <!-- VERIFICAR: Libro 1:1 NTV -->
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Texto literal verificado (NTV).</p>
+        <cite class="verse-card__reference">Libro 1:1 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Punto: lectura RVR1960 (inmediatamente después, mismo título y referencia) -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">1. Idea del punto</h2>
+    </header>
+    <div class="slide__body">
+      <!-- VERIFICAR: Libro 1:1 RVR1960 -->
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Texto literal verificado (RVR1960).</p>
+        <cite class="verse-card__reference">Libro 1:1 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Punto: ¿Qué significa? (explicación propia, separada de la Escritura) -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">1. Idea del punto</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Explicación sencilla en 1-3 frases.</p>
+          <p class="meaning-box__text fragment">Segunda frase, aparece con →.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Resumen: máximo 3 viñetas por vista, cada una con su referencia -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Resumen</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Punto uno. <span class="ref">Libro 1:1</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Versículo para recordar: uno solo, RVR1960 -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Versículo para recordar</h2>
+    </header>
+    <div class="slide__body slide__body--center">
+      <!-- VERIFICAR: Libro 1:1 RVR1960 -->
+      <blockquote class="verse-card verse-card--rvr1960 verse-card--featured">
+        <p class="verse-card__text">Texto literal verificado (RVR1960).</p>
+        <cite class="verse-card__reference">Libro 1:1 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Créditos (obligatoria) -->
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Versiones bíblicas</h2>
+    </header>
+    <div class="slide__body">
+      <p class="credits__item">
+        <span class="credits__version">Nueva Traducción Viviente (NTV)</span>
+        La Santa Biblia, Nueva Traducción Viviente, © Tyndale House Foundation, 2010. Todos los derechos reservados.
+      </p>
+      <p class="credits__item">
+        <span class="credits__version">Reina-Valera 1960 (RVR1960)</span>
+        Reina-Valera 1960 ® © Sociedades Bíblicas en América Latina, 1960. Renovado © Sociedades Bíblicas Unidas, 1988. Utilizado con permiso.
+      </p>
+      <a class="slide__home-link" href="../" data-focusable>Volver al inicio</a>
+    </div>
+  </section>
+
+</main>
+
+<div class="progress" data-progress aria-hidden="true"></div>
+</body>
+</html>

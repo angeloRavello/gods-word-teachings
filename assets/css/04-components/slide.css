@@ -1,0 +1,111 @@
+/*
+ * slide.css
+ * Visual style of a slide and its text blocks.
+ * Defines: .slide.is-active, .slide__title, .slide__subtitle, .slide__point,
+ *          .slide__text, .ref, .slide--cover, .slide__cover-title,
+ *          .slide__note, .slide--section, .slide__kicker, .credits,
+ *          .credits__item, .slide__home-link
+ */
+.slide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide__title {
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.slide__subtitle {
+  font-size: var(--font-size-subtitle);
+  line-height: var(--line-height-title);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.slide__point,
+.slide__text {
+  max-width: var(--measure-text);
+  margin-bottom: var(--space-l);
+}
+
+.slide__point {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Bible reference that backs a point (not a quote) */
+.ref {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+/* Small label above the title (e.g. "Parte 2") */
+.slide__kicker {
+  display: block;
+  margin-bottom: var(--space-s);
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-key);
+}
+
+/* Cover */
+.slide--cover .slide__body,
+.slide--section .slide__body {
+  justify-content: center;
+}
+
+.slide__cover-title {
+  font-size: var(--font-size-cover);
+  line-height: var(--line-height-title);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-s);
+}
+
+.slide__note {
+  flex: 0 0 auto;
+  max-width: var(--measure-wide);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+/* Credits */
+.credits__item {
+  max-width: var(--measure-wide);
+  margin-bottom: var(--space-m);
+  font-size: var(--font-size-ref);
+}
+
+.credits__version {
+  display: block;
+  font-weight: var(--font-weight-bold);
+}
+
+/* "Back to home" link, reachable with arrows + OK */
+.slide__home-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: var(--space-m);
+  padding: var(--space-s) var(--space-l);
+  border: var(--border-thin) solid var(--color-text);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+.slide__home-link.is-focused {
+  background: var(--color-text);
+  color: var(--color-bg);
+  -webkit-transform: scale(var(--focus-scale));
+  transform: scale(var(--focus-scale));
+}

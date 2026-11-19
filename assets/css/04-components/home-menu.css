@@ -1,0 +1,56 @@
+/*
+ * home-menu.css
+ * Presentation list on the home page, navigable with up/down + OK.
+ * Defines: .home-menu, .home-menu__item, .home-menu__link,
+ *          .home-menu__number, .home-menu__title, .home-menu__hint
+ */
+.home-menu {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  /* Room for the focus ring and the scale, so the focused item is never clipped */
+  padding: var(--space-m);
+}
+
+.home-menu__item {
+  margin-bottom: var(--space-m);
+}
+
+.home-menu__link {
+  display: flex;
+  align-items: center;
+  max-width: 80vw;
+  padding: var(--space-m) var(--space-l);
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  text-decoration: none;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.home-menu__link.is-focused {
+  border-color: var(--color-text);
+  background: var(--color-key-bg);
+  -webkit-transform: scale(var(--focus-scale));
+  transform: scale(var(--focus-scale));
+}
+
+.home-menu__number {
+  flex: 0 0 auto;
+  margin-right: var(--space-m);
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+}
+
+.home-menu__title {
+  font-weight: var(--font-weight-bold);
+}
+
+.home-menu__hint {
+  flex: 0 0 auto;
+  margin-top: var(--space-m);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}

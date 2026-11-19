@@ -1,0 +1,27 @@
+/*
+ * bullet-list.css
+ * List with large SVG icons (no emojis). Max 3 items per view.
+ * Defines: .bullet-list, .bullet-list__item, .bullet-list__icon,
+ *          .bullet-list__text
+ */
+.bullet-list__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--space-m);
+}
+
+.bullet-list__item:last-child {
+  margin-bottom: 0;
+}
+
+.bullet-list__icon {
+  flex: 0 0 auto;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-top: 0.15em;
+  margin-right: var(--space-m);
+}
+
+.bullet-list__text {
+  max-width: var(--measure-text);
+}

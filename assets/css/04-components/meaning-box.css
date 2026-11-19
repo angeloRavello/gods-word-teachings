@@ -1,0 +1,63 @@
+/*
+ * meaning-box.css
+ * Own explanation box ("¿Qué significa?"). Visually distinct from Scripture:
+ * green accent, title with icon, never inside a verse card.
+ * Defines: .meaning-box, .meaning-box__figure, .meaning-box__content,
+ *          .meaning-box__title, .meaning-box__icon, .meaning-box__text,
+ *          .meaning-box--prayer
+ */
+.meaning-box {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--space-m) var(--space-l);
+  border-left: var(--border-accent) solid var(--color-meaning);
+  border-radius: var(--radius);
+  background: var(--color-meaning-bg);
+}
+
+.meaning-box__figure {
+  flex: 0 0 auto;
+  width: var(--illustration-size);
+  margin-right: var(--space-l);
+}
+
+.meaning-box__content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.meaning-box__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-s);
+  font-size: var(--font-size-text);
+  line-height: var(--line-height-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-meaning);
+}
+
+.meaning-box__icon {
+  flex: 0 0 auto;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-right: var(--space-s);
+}
+
+.meaning-box__text {
+  max-width: var(--measure-text);
+  margin-bottom: var(--space-s);
+}
+
+.meaning-box__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Short prayer: own words, gold accent */
+.meaning-box--prayer {
+  border-left-color: var(--color-key);
+  background: var(--color-key-bg);
+}
+
+.meaning-box--prayer .meaning-box__title {
+  color: var(--color-key);
+}

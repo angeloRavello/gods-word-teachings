@@ -1,0 +1,24 @@
+/*
+ * 05-utilities.css
+ * Small single-purpose helpers. The only place where !important is allowed.
+ * Defines: .u-center, .u-hidden, .u-mt-l, .u-mb-0, .u-mb-l
+ */
+.u-center {
+  text-align: center !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-mt-l {
+  margin-top: var(--space-l) !important;
+}
+
+.u-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-l {
+  margin-bottom: var(--space-l) !important;
+}

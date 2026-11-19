@@ -1,0 +1,31 @@
+/*
+ * 06-animations.css
+ * Soft, short transitions (opacity/transform only) and step-by-step fragments.
+ * Fragments keep their space while hidden, so nothing moves when they appear.
+ * Defines: transitions for .slide, .fragment (+ .is-visible), focusable links
+ */
+.slide {
+  -webkit-transition: opacity var(--duration-fade) var(--easing), visibility 0s linear var(--duration-fade);
+  transition: opacity var(--duration-fade) var(--easing), visibility 0s linear var(--duration-fade);
+}
+
+.slide.is-active {
+  -webkit-transition: opacity var(--duration-fade) var(--easing), visibility 0s linear 0s;
+  transition: opacity var(--duration-fade) var(--easing), visibility 0s linear 0s;
+}
+
+.fragment {
+  opacity: 0;
+  -webkit-transition: opacity var(--duration-fade) var(--easing);
+  transition: opacity var(--duration-fade) var(--easing);
+}
+
+.fragment.is-visible {
+  opacity: 1;
+}
+
+.home-menu__link,
+.slide__home-link {
+  -webkit-transition: -webkit-transform var(--duration-fast) var(--easing);
+  transition: transform var(--duration-fast) var(--easing);
+}

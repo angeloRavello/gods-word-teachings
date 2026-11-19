@@ -1,0 +1,72 @@
+/*
+ * verse-card.css
+ * Bible verse card. The version is shown by color AND by a written badge.
+ * Defines: .verse-card, .verse-card__text, .verse-card__reference,
+ *          .verse-card__version, .verse-card--ntv, .verse-card--rvr1960,
+ *          .verse-card--featured
+ */
+.verse-card {
+  display: block;
+  margin: 0;
+  padding: var(--space-m) var(--space-l);
+  border-left: var(--border-accent) solid var(--color-text);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.verse-card__text {
+  max-width: var(--measure-verse);
+  font-size: var(--font-size-verse);
+  line-height: var(--line-height-text);
+}
+
+.verse-card__reference {
+  display: block;
+  margin-top: var(--space-s);
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-text);
+}
+
+.verse-card__version {
+  display: inline-block;
+  margin-left: var(--space-s);
+  padding: 0 var(--space-s);
+  border-radius: var(--radius-small);
+  background: var(--color-text);
+  color: var(--color-on-accent);
+  line-height: var(--line-height-text);
+}
+
+/* NTV: blue */
+.verse-card--ntv {
+  border-left-color: var(--color-ntv);
+  background: var(--color-ntv-bg);
+}
+
+.verse-card--ntv .verse-card__reference {
+  color: var(--color-ntv);
+}
+
+.verse-card--ntv .verse-card__version {
+  background: var(--color-ntv);
+}
+
+/* RVR1960: burgundy */
+.verse-card--rvr1960 {
+  border-left-color: var(--color-rvr);
+  background: var(--color-rvr-bg);
+}
+
+.verse-card--rvr1960 .verse-card__reference {
+  color: var(--color-rvr);
+}
+
+.verse-card--rvr1960 .verse-card__version {
+  background: var(--color-rvr);
+}
+
+/* "Verse to remember": a single, larger verse */
+.verse-card--featured .verse-card__text {
+  font-size: var(--font-size-verse-large);
+}

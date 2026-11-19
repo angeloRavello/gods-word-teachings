@@ -1,0 +1,72 @@
+/*
+ * 01-tokens.css
+ * Design tokens: every color, size, spacing and timing value of the project.
+ * Components must only use these variables. Changing the look of the whole
+ * project should mean editing this single file.
+ * Base canvas: 1920x1080 CSS px (1vw = 19.2px).
+ */
+:root {
+  /* Colors (fixed palette with meaning) */
+  --color-bg: #FBF6EC;
+  --color-surface: #FFFDF8;
+  --color-text: #1F1A14;
+  --color-text-muted: #4D443A;
+  --color-border: #E3D8C3;
+  --color-on-accent: #FFFFFF;
+
+  --color-ntv: #1E4E8C;
+  --color-ntv-bg: #EDF2F9;
+  --color-rvr: #7A1E2C;
+  --color-rvr-bg: #F7ECEC;
+  --color-meaning: #2F6B3A;
+  --color-meaning-bg: #EDF4EC;
+  --color-key: #8A5A00;
+  --color-key-bg: #F7EEDC;
+  --color-focus: #1F1A14;
+
+  /* Typography */
+  --font-family-base: "SamsungOne", "Samsung Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-cover: 6vw;
+  --font-size-title: 5vw;
+  --font-size-subtitle: 4vw;
+  --font-size-verse-large: 4.2vw;
+  --font-size-verse: 3.8vw;
+  --font-size-text: 3.4vw;
+  --font-size-ref: 2.6vw;
+  --font-size-small: 2.4vw;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --line-height-text: 1.5;
+  --line-height-title: 1.15;
+  --measure-text: 42ch;
+  --measure-verse: 44ch;
+  --measure-wide: 60ch;
+
+  /* Spacing (vw keeps proportions on any 16:9 screen) */
+  --safe-x: 5vw;
+  --safe-y: 5vh;
+  --space-xs: 0.5vw;
+  --space-s: 1vw;
+  --space-m: 2vw;
+  --space-l: 3vw;
+  --space-xl: 4.5vw;
+  --header-reserve-right: 14vw;
+
+  /* Shapes */
+  --radius: 1vw;
+  --radius-small: 0.4vw;
+  --border-accent: 0.7vw;
+  --border-thin: 0.25vw;
+  --focus-ring: 0.45vw;
+  --focus-scale: 1.03;
+
+  /* Images */
+  --icon-size: 1.2em;
+  --illustration-size: 15vw;
+  --illustration-size-large: 22vw;
+
+  /* Motion (only opacity and transform are animated) */
+  --duration-fade: 350ms;
+  --duration-fast: 200ms;
+  --easing: ease-out;
+}

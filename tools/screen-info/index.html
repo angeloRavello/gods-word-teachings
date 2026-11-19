@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnóstico de pantalla</title>
+  <link rel="stylesheet" href="../../assets/css/01-tokens.css">
+  <link rel="stylesheet" href="../../assets/css/02-base.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components/slide.css">
+</head>
+<body>
+<main class="page">
+  <header class="slide__header">
+    <h1 class="slide__title">Diagnóstico de pantalla</h1>
+  </header>
+  <!-- Herramienta aislada: script en línea a propósito, no forma parte del sistema TV.* -->
+  <p class="slide__text" id="screen-size"></p>
+  <p class="slide__text" id="screen-dpr"></p>
+  <p class="slide__text" id="screen-device"></p>
+  <p class="slide__text" id="last-key">Pulsa una tecla del control…</p>
+  <p class="slide__note" id="user-agent"></p>
+</main>
+<script>
+  (function () {
+    'use strict';
+
+    function setText(id, text) {
+      document.getElementById(id).textContent = text;
+    }
+
+    function render() {
+      setText('screen-size', 'Ventana: ' + window.innerWidth + ' × ' + window.innerHeight + ' px CSS');
+      setText('screen-dpr', 'devicePixelRatio: ' + window.devicePixelRatio);
+      setText('screen-device', 'Pantalla: ' + screen.width + ' × ' + screen.height);
+      setText('user-agent', navigator.userAgent);
+    }
+
+    // Muestra el código de cada tecla para ampliar el mapa de keys.js si hace falta.
+    document.addEventListener('keydown', function (event) {
+      setText('last-key', 'Tecla: key=' + (event.key || '(vacío)') + ' · keyCode=' + event.keyCode);
+    });
+
+    window.addEventListener('resize', render);
+    render();
+  })();
+</script>
+</body>
+</html>

@@ -25,7 +25,8 @@
 }
 
 .home-menu__link,
-.slide__home-link {
+.slide__home-link,
+.slide__action {
   -webkit-transition: -webkit-transform var(--duration-fast) var(--easing);
   transition: transform var(--duration-fast) var(--easing);
 }

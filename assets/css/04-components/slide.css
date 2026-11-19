@@ -4,7 +4,8 @@
  * Defines: .slide.is-active, .slide__title, .slide__subtitle, .slide__point,
  *          .slide__text, .ref, .slide--cover, .slide__cover-title,
  *          .slide__note, .slide--section, .slide__kicker, .credits,
- *          .credits__item, .slide__home-link
+ *          .credits__item, .slide__home-link, .slide__action,
+ *          .slide__action--small
  */
 .slide {
   opacity: 0;
@@ -89,8 +90,9 @@
   font-weight: var(--font-weight-bold);
 }
 
-/* "Back to home" link, reachable with arrows + OK */
-.slide__home-link {
+/* Action buttons ("Volver al inicio", full screen), reachable with arrows + OK */
+.slide__home-link,
+.slide__action {
   display: inline-block;
   align-self: flex-start;
   margin-top: var(--space-m);
@@ -98,12 +100,23 @@
   border: var(--border-thin) solid var(--color-text);
   border-radius: var(--radius);
   background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
   font-size: var(--font-size-text);
   font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-text);
   text-decoration: none;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
 }
 
-.slide__home-link.is-focused {
+/* Smaller variant, for secondary actions */
+.slide__action--small {
+  font-size: var(--font-size-ref);
+}
+
+.slide__home-link.is-focused,
+.slide__action.is-focused {
   background: var(--color-text);
   color: var(--color-bg);
   -webkit-transform: scale(var(--focus-scale));

@@ -131,7 +131,8 @@ gods-word-teachings/
 │   │   │   ├── fragments.js        # Revelado paso a paso dentro de una diapositiva
 │   │   │   ├── focus.js            # Foco entre elementos interactivos (↑ ↓ OK)
 │   │   │   ├── progress.js         # Actualiza el indicador de posición
-│   │   │   └── preload.js          # Precarga imágenes de la siguiente diapositiva
+│   │   │   ├── preload.js          # Precarga imágenes de la siguiente diapositiva
+│   │   │   └── fullscreen.js       # Botón de pantalla completa (en la portada de cada presentación)
 │   │   └── pages/
 │   │       ├── home.js             # Inicializa la portada
 │   │       └── presentation.js     # Inicializa una presentación

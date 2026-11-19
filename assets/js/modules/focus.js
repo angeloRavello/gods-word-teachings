@@ -53,9 +53,14 @@
     return items.length > 0;
   }
 
-  // Devuelve true si había un elemento enfocado para activar.
+  // Un elemento oculto (display: none) no tiene offsetParent: no se puede activar.
+  function isVisible(item) {
+    return item.offsetParent !== null;
+  }
+
+  // Devuelve true si había un elemento enfocado y visible para activar.
   function activateFocused() {
-    if (currentIndex < 0 || !items[currentIndex]) {
+    if (currentIndex < 0 || !items[currentIndex] || !isVisible(items[currentIndex])) {
       return false;
     }
     items[currentIndex].click();

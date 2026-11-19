@@ -66,11 +66,14 @@
 
     // Tiempo sin eventos que da por terminada una pulsación.
     var GESTURE_IDLE_MS = 500;
-    var MAX_LOG_LINES = 4;
+    var MAX_LOG_LINES = 5;
+
+    var RECENTER_TIMEOUT_MS = 1500;
+    var CENTER_TOLERANCE = 2;
 
     var centerX = 0;
     var centerY = 0;
-    var isResetting = false;
+    var recentering = null;
     var gesture = null;
     var idleTimer = null;
     var logLines = [];
@@ -105,13 +108,37 @@
       renderLog();
     }
 
+    function distanceToCenter() {
+      return Math.abs(window.pageXOffset - centerX) + Math.abs(window.pageYOffset - centerY);
+    }
+
+    // El regreso al centro también genera eventos (la TV lo anima). Se
+    // cuentan aparte, para comprobar que no son una pulsación nueva.
     function centerScroll() {
       centerX = Math.round(window.innerWidth);
       centerY = Math.round(window.innerHeight);
-      isResetting = true;
+      if (distanceToCenter() <= CENTER_TOLERANCE) {
+        return;
+      }
+      var current = { start: Date.now(), events: 0 };
+      recentering = current;
       window.scrollTo(centerX, centerY);
-      // El scrollTo también dispara 'scroll': se ignora en el siguiente cuadro.
-      setTimeout(function () { isResetting = false; }, 50);
+      // Si no llegan más eventos, no quedarse esperando para siempre.
+      setTimeout(function () {
+        if (recentering === current) {
+          addLogLine('(regreso al centro: ' + current.events + ' eventos, sin terminar, ignorado)');
+          recentering = null;
+        }
+      }, RECENTER_TIMEOUT_MS + 100);
+    }
+
+    function trackRecentering() {
+      recentering.events += 1;
+      var elapsed = Date.now() - recentering.start;
+      if (distanceToCenter() <= CENTER_TOLERANCE || elapsed > RECENTER_TIMEOUT_MS) {
+        addLogLine('(regreso al centro: ' + recentering.events + ' eventos, ' + elapsed + ' ms, ignorado)');
+        recentering = null;
+      }
     }
 
     function directionName(dx, dy) {
@@ -124,6 +151,11 @@
     function finishGesture() {
       var dx = window.pageXOffset - centerX;
       var dy = window.pageYOffset - centerY;
+      // Eventos sueltos sin movimiento real (llegan al terminar el regreso): ruido.
+      if (Math.abs(dx) < CENTER_TOLERANCE && Math.abs(dy) < CENTER_TOLERANCE) {
+        gesture = null;
+        return;
+      }
       addLogLine(directionName(dx, dy) +
         ': ' + gesture.scrollEvents + ' eventos scroll, ' +
         gesture.wheelEvents + ' wheel, dx=' + dx + ', dy=' + dy +
@@ -142,7 +174,9 @@
     }
 
     window.addEventListener('scroll', function () {
-      if (!isResetting) {
+      if (recentering) {
+        trackRecentering();
+      } else {
         trackEvent('scrollEvents');
       }
     });

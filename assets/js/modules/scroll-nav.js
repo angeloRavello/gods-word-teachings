@@ -6,9 +6,13 @@
  * mantiene centrada, y cada desplazamiento se traduce a una acción:
  * → o ↓ = 'next', ← o ↑ = 'prev'.
  *
- * Una pulsación puede generar varios eventos 'scroll'. Solo el primero
- * dispara la acción; el resto se ignora hasta que pasan IDLE_MS sin
- * eventos. Así una pulsación avanza exactamente un paso.
+ * Medido en la TV: una pulsación es un desplazamiento animado de ~2 s con
+ * 100+ eventos 'scroll'. Solo el primero dispara la acción; el resto se
+ * ignora hasta que pasan IDLE_MS sin eventos. Así una pulsación = un paso.
+ *
+ * Al terminar, la página vuelve al centro. La TV también anima ese regreso,
+ * y sus eventos NO son una pulsación nueva: mientras la página vuelve al
+ * centro se ignora todo (hasta llegar, o RECENTER_TIMEOUT_MS como máximo).
  */
 (function (window, document) {
   'use strict';
@@ -17,15 +21,20 @@
   var IDLE_MS = 400;
   // Desplazamientos menores se consideran ruido.
   var MIN_DELTA = 2;
-  // Tras recentrar o cambiar el tamaño de la ventana se ignoran los eventos
-  // que provoca el propio navegador (no son pulsaciones de la abuela).
-  var SUPPRESS_AFTER_RESET_MS = 150;
+  // Distancia al centro que se considera "ya llegó".
+  var CENTER_TOLERANCE = 2;
+  // Máximo tiempo que se espera a que termine la animación de regreso.
+  var RECENTER_TIMEOUT_MS = 1500;
+  // Al cambiar el tamaño (p. ej. pantalla completa) el navegador mueve la
+  // página por su cuenta: esos eventos tampoco son pulsaciones.
   var SUPPRESS_AFTER_RESIZE_MS = 600;
 
   var centerX = 0;
   var centerY = 0;
   var suppressUntil = 0;
   var isLocked = false;
+  var isRecentering = false;
+  var recenterDeadline = 0;
   var idleTimer = null;
 
   function createScrollArea() {
@@ -40,11 +49,31 @@
     suppressUntil = Math.max(suppressUntil, Date.now() + milliseconds);
   }
 
+  function distanceToCenter() {
+    return Math.abs(window.pageXOffset - centerX) + Math.abs(window.pageYOffset - centerY);
+  }
+
   function recenter() {
     centerX = window.innerWidth;
     centerY = window.innerHeight;
-    suppressFor(SUPPRESS_AFTER_RESET_MS);
+    if (distanceToCenter() <= CENTER_TOLERANCE) {
+      isRecentering = false;
+      return;
+    }
+    isRecentering = true;
+    recenterDeadline = Date.now() + RECENTER_TIMEOUT_MS;
     window.scrollTo(centerX, centerY);
+  }
+
+  // Devuelve true mientras la página siga volviendo al centro.
+  function isStillRecentering() {
+    if (!isRecentering) {
+      return false;
+    }
+    if (distanceToCenter() <= CENTER_TOLERANCE || Date.now() > recenterDeadline) {
+      isRecentering = false;
+    }
+    return true;
   }
 
   function getAction(deltaX, deltaY) {
@@ -63,7 +92,7 @@
   }
 
   function handleScroll() {
-    if (Date.now() < suppressUntil) {
+    if (Date.now() < suppressUntil || isStillRecentering()) {
       return;
     }
     clearTimeout(idleTimer);

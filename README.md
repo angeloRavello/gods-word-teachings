@@ -13,7 +13,12 @@ Presentaciones bíblicas en HTML para verlas en el navegador de una Smart TV Sam
 
 ## Controles
 
-**En la TV Samsung** las flechas del control mueven un puntero (cursor), y OK hace clic:
+**En la TV Samsung**, en **modo desplazamiento** (ícono de 4 flechas):
+
+- → o ↓: avanzar.
+- ← o ↑: volver.
+
+En **modo puntero** (cursor), OK hace clic:
 
 - Clic en la flecha `›` de la derecha, o en cualquier parte de la pantalla: avanzar.
 - Clic en la flecha `‹` de la izquierda, o en el borde izquierdo: volver.

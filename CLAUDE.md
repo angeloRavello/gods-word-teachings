@@ -134,7 +134,8 @@ gods-word-teachings/
 │   │   │   ├── progress.js         # Actualiza el indicador de posición
 │   │   │   ├── preload.js          # Precarga imágenes de la siguiente diapositiva
 │   │   │   ├── fullscreen.js       # Botón de pantalla completa (en la portada de cada presentación)
-│   │   │   └── pointer.js          # Clic del puntero de la TV → acciones (navegación principal)
+│   │   │   ├── pointer.js          # Clic del puntero de la TV → acciones
+│   │   │   └── scroll-nav.js       # Flechas en modo desplazamiento de la TV → acciones
 │   │   └── pages/
 │   │       ├── home.js             # Inicializa la portada
 │   │       └── presentation.js     # Inicializa una presentación
@@ -209,7 +210,11 @@ gods-word-teachings/
 
 ## Navegación con el control remoto
 
-**Comprobado en la TV real:** el navegador de Samsung NO entrega las flechas a la página. Tiene dos modos: **puntero** (las flechas mueven un cursor y OK hace clic) y **desplazamiento** (ícono de 4 direcciones; las flechas desplazan la página). Lo único que llega a la página es el **clic**. Por eso la navegación principal es por puntero (`assets/js/modules/pointer.js`):
+**Comprobado en la TV real:** el navegador de Samsung NO entrega las flechas a la página. Tiene dos modos: **puntero** (las flechas mueven un cursor y OK hace clic) y **desplazamiento** (ícono de 4 direcciones; las flechas desplazan la página). Lo que sí llega a la página es el **clic** (modo puntero) y el **desplazamiento** (modo desplazamiento). Se usan los dos:
+
+**Modo desplazamiento** (`assets/js/modules/scroll-nav.js`): la ventana se puede desplazar sobre un área invisible (`.has-scroll-nav`, `.scroll-nav__area`) y se mantiene centrada; todo el contenido visible es `position: fixed`. → o ↓ = siguiente, ← o ↑ = anterior. Una pulsación puede generar varios eventos `scroll`: solo el primero dispara la acción y el resto se ignora hasta 400 ms sin eventos (una pulsación = un paso).
+
+**Modo puntero** (`assets/js/modules/pointer.js`):
 - Clic en cualquier zona libre: 25 % izquierdo = anterior, el resto = siguiente. Basta con dejar el cursor a la derecha y pulsar OK.
 - Botones grandes `‹ ›` (`deck-nav`) en los márgenes laterales como guía visual, con `data-action="prev|next"`.
 - Los clics sobre enlaces y botones se dejan pasar (portada, "Volver al inicio", pantalla completa).

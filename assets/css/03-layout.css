@@ -3,7 +3,8 @@
  * Page structure: full-screen deck, slide safe area (overscan) and the
  * header/body zones. No visual styling here.
  * Defines: .deck, .slide, .slide__header, .slide__body, .slide__body--center,
- *          .page, .media, .media__figure, .media__content
+ *          .page, .media, .media__figure, .media__content,
+ *          .has-scroll-nav, .scroll-nav__area
  */
 .deck {
   position: fixed;
@@ -43,6 +44,30 @@
 
 .slide__body--center {
   justify-content: center;
+}
+
+/*
+ * Scroll navigation (scroll-nav.js): the window can scroll over an invisible
+ * area, so the TV "scroll mode" arrows produce scroll events. All visible
+ * content is position: fixed, so it never moves.
+ */
+.has-scroll-nav {
+  height: auto;
+  overflow: auto;
+}
+
+.has-scroll-nav body {
+  height: auto;
+  overflow: visible;
+}
+
+.has-scroll-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-nav__area {
+  width: 300vw;
+  height: 300vh;
 }
 
 /* Generic page (home, tools) */

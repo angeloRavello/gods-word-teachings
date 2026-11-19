@@ -257,7 +257,7 @@ Actualizaciones:
 ```bash
 git add . && git commit -m "feat: add 00002-god-loves-us" && git push
 ```
-**Etiqueta de versión (obligatorio en cada commit):** antes de cada commit, actualizar `TV.version` en `assets/js/core/version.js` con la fecha y hora actual (`date +"%Y-%m-%d %H:%M"`). La portada la muestra como "Versión AAAA-MM-DD HH:MM" y sirve para comprobar en la TV que ya cargó la última publicación (GitHub Pages cachea ~10 min).
+**Etiqueta de versión (obligatorio en cada commit):** antes de cada commit, en `assets/js/core/version.js` sumar 1 a `TV.version.number` (contador correlativo que empezó en 1) y poner en `TV.version.date` la fecha y hora actual (`date +"%Y-%m-%d %H:%M"`). La portada la muestra como "Versión N - AAAA-MM-DD HH:MM" y sirve para comprobar en la TV que ya cargó la última publicación (GitHub Pages cachea ~10 min).
 
 Los mensajes de commit siguen **Conventional Commits** (`feat:`, `fix:`, `docs:`, `style:`, `chore:`), sin líneas de atribución a IA.
 URL: `https://angeloravello.github.io/gods-word-teachings/` (Pages tarda 1–2 minutos en actualizar).

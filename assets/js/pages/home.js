@@ -28,7 +28,7 @@
   function renderVersion() {
     var label = document.querySelector('[data-version]');
     if (label && TV.version) {
-      label.textContent = 'Versión ' + TV.version;
+      label.textContent = 'Versión ' + TV.version.number + ' - ' + TV.version.date;
     }
   }
 

@@ -92,7 +92,7 @@ Crear presentaciones en HTML, simples y fáciles de leer, para reemplazar los PP
 
 ## Pantalla 4K: consideraciones
 - Aunque la TV es 4K, el navegador de Samsung normalmente dibuja la página a **1920×1080 px CSS** y la escala. Diseñar sobre **1920×1080** con unidades `vw`/`vh` para que escale a cualquier resolución.
-- Comprobarlo una vez en la TV con una página de diagnóstico (`/tools/screen-info/`) que muestre `window.innerWidth`, `innerHeight` y `devicePixelRatio`. Anotar aquí el resultado: `Resolución real medida: ________`.
+- Comprobarlo una vez en la TV con una página de diagnóstico (`/tools/screen-info/`) que muestre `window.innerWidth`, `innerHeight` y `devicePixelRatio`. Resultado medido en la TV (2026-11-19): **ventana 1920×1080 px CSS, navegador Chrome 108.0.5359.1**. La pantalla completa funciona.
 - **Preferir SVG** para ilustraciones e íconos, porque se ven nítidos en 4K sin pesar más.
 - Fotos o fondos de mapa de bits: máximo **2560 px** de ancho y ≤ 300 KB (JPG/WebP). No usar imágenes 3840 px, porque consumen demasiada memoria de la TV.
 - Dejar un margen de seguridad de ~5% en todos los bordes (overscan).
@@ -132,7 +132,8 @@ gods-word-teachings/
 │   │   │   ├── focus.js            # Foco entre elementos interactivos (↑ ↓ OK)
 │   │   │   ├── progress.js         # Actualiza el indicador de posición
 │   │   │   ├── preload.js          # Precarga imágenes de la siguiente diapositiva
-│   │   │   └── fullscreen.js       # Botón de pantalla completa (en la portada de cada presentación)
+│   │   │   ├── fullscreen.js       # Botón de pantalla completa (en la portada de cada presentación)
+│   │   │   └── pointer.js          # Clic del puntero de la TV → acciones (navegación principal)
 │   │   └── pages/
 │   │       ├── home.js             # Inicializa la portada
 │   │       └── presentation.js     # Inicializa una presentación
@@ -206,11 +207,19 @@ gods-word-teachings/
 ---
 
 ## Navegación con el control remoto
+
+**Comprobado en la TV real:** el navegador de Samsung NO entrega las flechas a la página. Tiene dos modos: **puntero** (las flechas mueven un cursor y OK hace clic) y **desplazamiento** (ícono de 4 direcciones; las flechas desplazan la página). Lo único que llega a la página es el **clic**. Por eso la navegación principal es por puntero (`assets/js/modules/pointer.js`):
+- Clic en cualquier zona libre: 25 % izquierdo = anterior, el resto = siguiente. Basta con dejar el cursor a la derecha y pulsar OK.
+- Botones grandes `‹ ›` (`deck-nav`) en los márgenes laterales como guía visual, con `data-action="prev|next"`.
+- Los clics sobre enlaces y botones se dejan pasar (portada, "Volver al inicio", pantalla completa).
+- Todo clic se traduce a la misma acción `tv:action` que las teclas, así fragmentos y diapositivas se comportan igual.
+
+Las teclas siguen soportadas (teclado en la PC, o si algún modelo las entrega):
 - `←` / `→` (keyCode 37 / 39): paso o diapositiva anterior / siguiente. Primero se revelan los fragmentos y luego se pasa de diapositiva.
 - `↑` / `↓` (38 / 40): mover el foco entre elementos interactivos (en la portada, entre presentaciones).
 - `OK` / `Enter` (13): activar el elemento enfocado.
 - Detectar con `event.keyCode` además de `event.key`, porque algunos motores antiguos no envían `key`.
-- Nada debe depender del hover, el mouse ni el tacto. **Foco muy visible**: borde grueso de alto contraste y ligera escala.
+- Nada debe depender del hover. Todo lo interactivo debe funcionar con **clic** (puntero de la TV) y con teclado. **Foco muy visible**: borde grueso de alto contraste y ligera escala.
 - Cada presentación permite volver a la portada (enlace "Volver al inicio" en la diapositiva final, alcanzable con flechas + OK).
 
 ## Reglas técnicas (compatibilidad con Tizen)

@@ -17,6 +17,7 @@
   <script defer src="assets/js/core/version.js"></script>
   <script defer src="assets/js/core/keys.js"></script>
   <script defer src="assets/js/modules/focus.js"></script>
+  <script defer src="assets/js/modules/refresh.js"></script>
   <script defer src="assets/js/pages/home.js"></script>
 </head>
 <body>
@@ -40,8 +41,11 @@
       <p class="home-menu__hint">Elige con el puntero y pulsa OK.</p>
       <p class="home-menu__version" data-version></p>
     </div>
-    <!-- Herramienta técnica: al final del recorrido del foco, separada de las presentaciones -->
-    <a class="home-menu__tool-link" href="tools/screen-info/" data-focusable>Diagnóstico de pantalla</a>
+    <!-- Herramientas técnicas: al final del recorrido del foco, separadas de las presentaciones -->
+    <div class="home-menu__tools">
+      <button class="home-menu__tool-link" type="button" data-focusable data-refresh>Actualizar</button>
+      <a class="home-menu__tool-link" href="tools/screen-info/" data-focusable>Diagnóstico de pantalla</a>
+    </div>
   </footer>
 </main>
 </body>

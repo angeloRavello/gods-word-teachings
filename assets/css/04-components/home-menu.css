@@ -3,7 +3,8 @@
  * Presentation list on the home page, navigable with up/down + OK.
  * Defines: .home-menu, .home-menu__item, .home-menu__link,
  *          .home-menu__number, .home-menu__title, .home-menu__footer,
- *          .home-menu__hint, .home-menu__version, .home-menu__tool-link
+ *          .home-menu__hint, .home-menu__version, .home-menu__tools,
+ *          .home-menu__tool-link
  */
 .home-menu {
   flex: 1 1 auto;
@@ -67,9 +68,19 @@
   color: var(--color-text-muted);
 }
 
-/* Secondary, technical link: small and quiet, but still clearly focusable */
+.home-menu__tools {
+  display: flex;
+  align-items: center;
+}
+
+/* Secondary, technical link/button: small and quiet, but still clearly focusable */
 .home-menu__tool-link {
+  margin-left: var(--space-m);
   padding: var(--space-xs) var(--space-m);
+  background: transparent;
+  font-family: inherit;
+  line-height: var(--line-height-text);
+  cursor: pointer;
   border: var(--border-thin) solid var(--color-border);
   border-radius: var(--radius);
   font-size: var(--font-size-small);

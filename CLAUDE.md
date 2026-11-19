@@ -135,7 +135,8 @@ gods-word-teachings/
 │   │   │   ├── preload.js          # Precarga imágenes de la siguiente diapositiva
 │   │   │   ├── fullscreen.js       # Botón de pantalla completa (en la portada de cada presentación)
 │   │   │   ├── pointer.js          # Clic del puntero de la TV → acciones
-│   │   │   └── scroll-nav.js       # Flechas en modo desplazamiento de la TV → acciones
+│   │   │   ├── scroll-nav.js       # Flechas en modo desplazamiento de la TV → acciones
+│   │   │   └── refresh.js          # Botón "Actualizar" de la portada: re-descarga todo con fetch(cache: 'reload')
 │   │   └── pages/
 │   │       ├── home.js             # Inicializa la portada
 │   │       └── presentation.js     # Inicializa una presentación
@@ -257,7 +258,7 @@ Actualizaciones:
 ```bash
 git add . && git commit -m "feat: add 00002-god-loves-us" && git push
 ```
-**Etiqueta de versión (obligatorio en cada commit):** antes de cada commit, en `assets/js/core/version.js` sumar 1 a `TV.version.number` (contador correlativo que empezó en 1) y poner en `TV.version.date` la fecha y hora actual (`date +"%Y-%m-%d %H:%M"`). La portada la muestra como "Versión N - AAAA-MM-DD HH:MM" y sirve para comprobar en la TV que ya cargó la última publicación (GitHub Pages cachea ~10 min).
+**Etiqueta de versión (obligatorio en cada commit):** antes de cada commit, en `assets/js/core/version.js` sumar 1 a `TV.version.number` (contador correlativo que empezó en 1) y poner en `TV.version.date` la fecha y hora actual (`date +"%Y-%m-%d %H:%M"`). El botón **"Actualizar"** de la portada (`refresh.js`) vuelve a descargar la portada, cada página enlazada y todos sus archivos ignorando el caché (una página no puede borrar el caché, pero `fetch(url, { cache: 'reload' })` reemplaza la copia guardada) y después recarga. Si se agrega un tipo de archivo nuevo referenciado de otra forma, revisar que `extractAssetUrls` lo encuentre. La portada muestra la versión como "Versión N - AAAA-MM-DD HH:MM" y sirve para comprobar en la TV que ya cargó la última publicación (GitHub Pages cachea ~10 min).
 
 Los mensajes de commit siguen **Conventional Commits** (`feat:`, `fix:`, `docs:`, `style:`, `chore:`), sin líneas de atribución a IA.
 URL: `https://angeloravello.github.io/gods-word-teachings/` (Pages tarda 1–2 minutos en actualizar).

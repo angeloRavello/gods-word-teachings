@@ -25,5 +25,7 @@
   }
 
   document.addEventListener('tv:action', handleAction);
-  TV.focus.setScope(document.querySelector('.home-menu'));
+  // El foco recorre toda la página: primero las presentaciones y al final
+  // el enlace de diagnóstico, así nunca es lo primero que se elige.
+  TV.focus.setScope(document.querySelector('.page'));
 })(window, document);

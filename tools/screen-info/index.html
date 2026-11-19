@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../assets/css/02-base.css">
   <link rel="stylesheet" href="../../assets/css/03-layout.css">
   <link rel="stylesheet" href="../../assets/css/04-components/slide.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
 </head>
 <body>
 <main class="page">
@@ -15,11 +16,12 @@
     <h1 class="slide__title">Diagnóstico de pantalla</h1>
   </header>
   <!-- Herramienta aislada: script en línea a propósito, no forma parte del sistema TV.* -->
-  <p class="slide__text" id="screen-size"></p>
-  <p class="slide__text" id="screen-dpr"></p>
-  <p class="slide__text" id="screen-device"></p>
-  <p class="slide__text" id="last-key">Pulsa una tecla del control…</p>
-  <p class="slide__note" id="user-agent"></p>
+  <p class="slide__text u-mb-0" id="screen-size"></p>
+  <p class="slide__text u-mb-0" id="screen-dpr"></p>
+  <p class="slide__text u-mb-0" id="screen-device"></p>
+  <p class="slide__text u-mb-0" id="last-key">Pulsa una tecla del control…</p>
+  <p class="slide__note u-mt-l" id="user-agent"></p>
+  <a class="slide__home-link is-focused" href="../../" id="home-link">Volver al inicio</a>
 </main>
 <script>
   (function () {
@@ -43,6 +45,8 @@
 
     window.addEventListener('resize', render);
     render();
+    // Con el foco ya puesto, OK en el control vuelve a la portada.
+    document.getElementById('home-link').focus({ preventScroll: true });
   })();
 </script>
 </body>

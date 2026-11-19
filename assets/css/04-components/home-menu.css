@@ -2,7 +2,8 @@
  * home-menu.css
  * Presentation list on the home page, navigable with up/down + OK.
  * Defines: .home-menu, .home-menu__item, .home-menu__link,
- *          .home-menu__number, .home-menu__title, .home-menu__hint
+ *          .home-menu__number, .home-menu__title, .home-menu__footer,
+ *          .home-menu__hint, .home-menu__tool-link
  */
 .home-menu {
   flex: 1 1 auto;
@@ -48,9 +49,35 @@
   font-weight: var(--font-weight-bold);
 }
 
-.home-menu__hint {
+.home-menu__footer {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: var(--space-m);
+}
+
+.home-menu__hint {
   font-size: var(--font-size-small);
   color: var(--color-text-muted);
+}
+
+/* Secondary, technical link: small and quiet, but still clearly focusable */
+.home-menu__tool-link {
+  padding: var(--space-xs) var(--space-m);
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  -webkit-transform-origin: right center;
+  transform-origin: right center;
+}
+
+.home-menu__tool-link.is-focused {
+  border-color: var(--color-text);
+  background: var(--color-key-bg);
+  color: var(--color-text);
+  -webkit-transform: scale(var(--focus-scale));
+  transform: scale(var(--focus-scale));
 }

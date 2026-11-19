@@ -24,7 +24,16 @@
     }
   }
 
+  // Etiqueta de versión: confirma si la TV ya cargó la última publicación.
+  function renderVersion() {
+    var label = document.querySelector('[data-version]');
+    if (label && TV.version) {
+      label.textContent = 'Versión ' + TV.version;
+    }
+  }
+
   document.addEventListener('tv:action', handleAction);
+  renderVersion();
   // El foco recorre toda la página: primero las presentaciones y al final
   // el enlace de diagnóstico, así nunca es lo primero que se elige.
   TV.focus.setScope(document.querySelector('.page'));

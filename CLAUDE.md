@@ -125,7 +125,8 @@ gods-word-teachings/
 │   ├── js/
 │   │   ├── core/
 │   │   │   ├── namespace.js        # Crea window.TV = {} (cargar primero)
-│   │   │   └── keys.js             # Mapa de teclas del control → acciones
+│   │   │   ├── keys.js             # Mapa de teclas del control → acciones
+│   │   │   └── version.js          # Etiqueta de versión de la portada (actualizar en cada commit)
 │   │   ├── modules/
 │   │   │   ├── deck.js             # Motor de diapositivas (ir a, siguiente, anterior)
 │   │   │   ├── fragments.js        # Revelado paso a paso dentro de una diapositiva
@@ -247,6 +248,8 @@ Actualizaciones:
 ```bash
 git add . && git commit -m "feat: add 00002-god-loves-us" && git push
 ```
+**Etiqueta de versión (obligatorio en cada commit):** antes de cada commit, actualizar `TV.version` en `assets/js/core/version.js` con la fecha y hora actual (`date +"%Y-%m-%d %H:%M"`). La portada la muestra como "Versión AAAA-MM-DD HH:MM" y sirve para comprobar en la TV que ya cargó la última publicación (GitHub Pages cachea ~10 min).
+
 Los mensajes de commit siguen **Conventional Commits** (`feat:`, `fix:`, `docs:`, `style:`, `chore:`), sin líneas de atribución a IA.
 URL: `https://angeloravello.github.io/gods-word-teachings/` (Pages tarda 1–2 minutos en actualizar).
 

@@ -3,7 +3,7 @@
  * Presentation list on the home page, navigable with up/down + OK.
  * Defines: .home-menu, .home-menu__item, .home-menu__link,
  *          .home-menu__number, .home-menu__title, .home-menu__footer,
- *          .home-menu__hint, .home-menu__tool-link
+ *          .home-menu__hint, .home-menu__version, .home-menu__tool-link
  */
 .home-menu {
   flex: 1 1 auto;
@@ -58,6 +58,11 @@
 }
 
 .home-menu__hint {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.home-menu__version {
   font-size: var(--font-size-small);
   color: var(--color-text-muted);
 }

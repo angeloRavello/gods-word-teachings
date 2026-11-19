@@ -1,0 +1,67 @@
+/*
+ * compare.css
+ * Two columns side by side ("lo que pasa" / "lo que permanece"). Each column
+ * has an icon title and a short list. Columns can be revealed with .fragment.
+ * Defines: .compare, .compare__column, .compare__column--passing,
+ *          .compare__column--lasting, .compare__title, .compare__icon,
+ *          .compare__item, .compare__ref
+ */
+.compare {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.compare__column {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--space-m) var(--space-m);
+  border-left: var(--border-accent) solid var(--color-text-muted);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.compare__column + .compare__column {
+  margin-left: var(--space-m);
+}
+
+.compare__column--lasting {
+  border-left-color: var(--color-key);
+  background: var(--color-key-bg);
+}
+
+.compare__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-s);
+  font-size: var(--font-size-text);
+  line-height: var(--line-height-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.compare__column--lasting .compare__title {
+  color: var(--color-key);
+}
+
+.compare__icon {
+  flex: 0 0 auto;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-right: var(--space-s);
+}
+
+.compare__item {
+  margin-bottom: var(--space-s);
+  font-size: var(--font-size-text);
+  line-height: var(--line-height-title);
+}
+
+.compare__item:last-child {
+  margin-bottom: 0;
+}
+
+.compare__ref {
+  display: block;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}

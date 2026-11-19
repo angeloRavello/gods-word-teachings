@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vida eterna</title>
+
+  <link rel="stylesheet" href="../assets/css/01-tokens.css">
+  <link rel="stylesheet" href="../assets/css/02-base.css">
+  <link rel="stylesheet" href="../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../assets/css/04-components/slide.css">
+  <link rel="stylesheet" href="../assets/css/04-components/verse-card.css">
+  <link rel="stylesheet" href="../assets/css/04-components/meaning-box.css">
+  <link rel="stylesheet" href="../assets/css/04-components/bullet-list.css">
+  <link rel="stylesheet" href="../assets/css/04-components/progress.css">
+  <link rel="stylesheet" href="../assets/css/04-components/passage.css">
+  <link rel="stylesheet" href="../assets/css/04-components/step-badge.css">
+  <link rel="stylesheet" href="../assets/css/04-components/compare.css">
+  <link rel="stylesheet" href="../assets/css/05-utilities.css">
+  <link rel="stylesheet" href="../assets/css/06-animations.css">
+
+  <script defer src="../assets/js/core/namespace.js"></script>
+  <script defer src="../assets/js/core/keys.js"></script>
+  <script defer src="../assets/js/modules/deck.js"></script>
+  <script defer src="../assets/js/modules/fragments.js"></script>
+  <script defer src="../assets/js/modules/focus.js"></script>
+  <script defer src="../assets/js/modules/progress.js"></script>
+  <script defer src="../assets/js/modules/preload.js"></script>
+  <script defer src="../assets/js/modules/fullscreen.js"></script>
+  <script defer src="../assets/js/modules/pointer.js"></script>
+  <script defer src="../assets/js/modules/scroll-nav.js"></script>
+  <script defer src="../assets/js/pages/presentation.js"></script>
+</head>
+<body data-home-url="../">
+<!-- Migrado de la lección 08 (Vida eterna, serie «Conociendo a Dios» 6 de 6). Se conservan solo NTV y RVR1960; se descartaron TLA y NBLA. -->
+<main class="deck">
+  <section class="slide slide--cover" data-slide>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/infinity.svg" alt="">
+      </div>
+      <div class="media__content">
+        <span class="slide__kicker">Serie «Conociendo a Dios» · 6 de 6</span>
+        <h1 class="slide__cover-title">Vida eterna</h1>
+        <p class="slide__subtitle">Juan 11:17-27</p>
+        <button class="slide__action slide__action--small u-mt-l" type="button" data-focusable data-fullscreen-toggle>Iniciar pantalla completa</button>
+      </div>
+    </div>
+    <p class="slide__note">Textos bíblicos: Nueva Traducción Viviente (NTV) y Reina-Valera 1960 (RVR1960). Avisos de derechos al final.</p>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Para pensar</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure">
+        <img data-src="../assets/icons/light.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__text">Esta es la última lección de la serie.</p>
+        <p class="slide__text fragment">Dios no solo quiere perdonarnos: quiere darnos <strong class="key">vida para siempre</strong> con Él.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Dos versiones de la Biblia</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text"><strong class="key">NTV:</strong> Nueva Traducción Viviente.</p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text"><strong class="key">RVR1960:</strong> Reina-Valera 1960.</p>
+        </li>
+      </ul>
+      <p class="slide__text u-mt-l fragment">Cada pasaje lo leeremos primero en NTV y después en RVR1960.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Un poco de contexto</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Lázaro, amigo de Jesús, <strong class="key">había muerto</strong>.
+            <span class="ref">Juan 11:5, 14</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Sus hermanas <strong class="key">Marta y María</strong> estaban de luto.
+            <span class="ref">Juan 11:19</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Ya llevaba <strong class="key">cuatro días</strong> en la tumba.
+            <span class="ref">Juan 11:17</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Nota original: Lázaro, amigo de Jesús, había muerto. Sus hermanas Marta y María estaban de luto. -->
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Juan 11:17-18<span class="passage__pager">(1 de 5)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">17</span>Cuando Jesús llegó a Betania, le dijeron que Lázaro ya llevaba cuatro días en la tumba.</p>
+        <p class="passage__verse"><span class="passage__num">18</span>Betania quedaba solo a unos pocos kilómetros de Jerusalén,</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Juan 11:19-20<span class="passage__pager">(2 de 5)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">19</span>y mucha gente se había acercado para consolar a Marta y a María por la pérdida de su hermano.</p>
+        <p class="passage__verse"><span class="passage__num">20</span>Cuando Marta se enteró de que Jesús estaba por llegar, salió a su encuentro, pero María se quedó en la casa.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Juan 11:21-23<span class="passage__pager">(3 de 5)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">21</span>Marta le dijo a Jesús: —<strong class="key">Señor, si tan solo hubieras estado aquí, mi hermano no habría muerto;</strong></p>
+        <p class="passage__verse"><span class="passage__num">22</span>pero aun ahora, yo sé que Dios te dará todo lo que pidas.</p>
+        <p class="passage__verse"><span class="passage__num">23</span>Jesús le dijo: —<strong class="key">Tu hermano resucitará.</strong></p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Juan 11:24-25<span class="passage__pager">(4 de 5)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">24</span>—Es cierto—respondió Marta—, resucitará cuando resuciten todos, en el día final.</p>
+        <p class="passage__verse"><span class="passage__num">25</span>Jesús le dijo: —<strong class="key">Yo soy la resurrección y la vida. El que cree en mí vivirá aun después de haber muerto.</strong></p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Juan 11:26-27<span class="passage__pager">(5 de 5)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">26</span>Todo el que vive en mí y cree en mí <strong class="key">jamás morirá. ¿Lo crees, Marta?</strong></p>
+        <p class="passage__verse"><span class="passage__num">27</span>—<strong class="key">Sí, Señor</strong>—le dijo ella—. Siempre he creído que tú eres el Mesías, el Hijo de Dios, el que ha venido de Dios al mundo.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Juan 11:17-19<span class="passage__pager">(1 de 4)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">17</span>Vino, pues, Jesús, y halló que hacía ya cuatro días que Lázaro estaba en el sepulcro.</p>
+        <p class="passage__verse"><span class="passage__num">18</span>Betania estaba cerca de Jerusalén, como a quince estadios;</p>
+        <p class="passage__verse"><span class="passage__num">19</span>y muchos de los judíos habían venido a Marta y a María, para consolarlas por su hermano.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Juan 11:20-22<span class="passage__pager">(2 de 4)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">20</span>Entonces Marta, cuando oyó que Jesús venía, salió a encontrarle; pero María se quedó en casa.</p>
+        <p class="passage__verse"><span class="passage__num">21</span>Y Marta dijo a Jesús: <strong class="key">Señor, si hubieses estado aquí, mi hermano no habría muerto.</strong></p>
+        <p class="passage__verse"><span class="passage__num">22</span>Mas también sé ahora que todo lo que pidas a Dios, Dios te lo dará.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Juan 11:23-25<span class="passage__pager">(3 de 4)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">23</span>Jesús le dijo: <strong class="key">Tu hermano resucitará.</strong></p>
+        <p class="passage__verse"><span class="passage__num">24</span>Marta le dijo: Yo sé que resucitará en la resurrección, en el día postrero.</p>
+        <p class="passage__verse"><span class="passage__num">25</span>Le dijo Jesús: <strong class="key">Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá.</strong></p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Juan 11:26-27<span class="passage__pager">(4 de 4)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">26</span>Y todo aquel que vive y cree en mí, <strong class="key">no morirá eternamente. ¿Crees esto?</strong></p>
+        <p class="passage__verse"><span class="passage__num">27</span>Le dijo: <strong class="key">Sí, Señor</strong>; yo he creído que tú eres el Cristo, el Hijo de Dios, que has venido al mundo.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">Jesús entiende nuestro dolor</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/heart.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Marta le habló a Jesús <strong class="key">con sinceridad</strong>, y él <strong class="key">no la regañó</strong>: le dio esperanza.
+          <span class="ref">Juan 11:21-23</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Jesús entiende nuestro dolor</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Marta le dijo a Jesús: —Señor, si tan solo hubieras estado aquí, mi hermano no habría muerto;</p>
+        <cite class="verse-card__reference">Juan 11:21 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Jesús entiende nuestro dolor</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Y Marta dijo a Jesús: Señor, si hubieses estado aquí, mi hermano no habría muerto.</p>
+        <cite class="verse-card__reference">Juan 11:21 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Jesús entiende nuestro dolor</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Jesús <strong class="key">entiende</strong> lo que sentimos.
+            <span class="ref">Hebreos 4:15</span></p>
+          <p class="meaning-box__text fragment">Poco después, Jesús <strong class="key">lloró</strong> con ellos.
+            <span class="ref">Juan 11:35</span></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">«Yo soy la resurrección y la vida»</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/light.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">La muerte <strong class="key">no es el final</strong>: Jesús <strong class="key">es</strong> la vida, y quien cree en él <strong class="key">vivirá</strong>.
+          <span class="ref">Juan 11:25</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«Yo soy la resurrección y la vida»</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Jesús le dijo: —Yo soy la resurrección y la vida. El que cree en mí vivirá aun después de haber muerto.</p>
+        <cite class="verse-card__reference">Juan 11:25 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«Yo soy la resurrección y la vida»</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Le dijo Jesús: Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá.</p>
+        <cite class="verse-card__reference">Juan 11:25 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«Yo soy la resurrección y la vida»</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Jesús no dice «yo doy» la resurrección: dice <strong class="key">«yo soy»</strong>.</p>
+          <p class="meaning-box__text fragment">Solo Dios puede decir eso.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">«¿Lo crees?»</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/question.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Jesús le hizo a Marta <strong class="key">una pregunta personal</strong>. Hoy te la hace <strong class="key">a ti</strong>.
+          <span class="ref">Juan 11:26</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«¿Lo crees?»</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Todo el que vive en mí y cree en mí jamás morirá. ¿Lo crees, Marta?</p>
+        <cite class="verse-card__reference">Juan 11:26 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«¿Lo crees?»</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Y todo aquel que vive y cree en mí, no morirá eternamente. ¿Crees esto?</p>
+        <cite class="verse-card__reference">Juan 11:26 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«¿Lo crees?»</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Haz una pausa y deja que la pregunta resuene.</p>
+          <p class="meaning-box__text fragment">Marta respondió: <strong class="key">«Sí, Señor»</strong>.
+            <span class="ref">Juan 11:27</span></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">Un lugar preparado</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/home.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Jesús <strong class="key">prepara un lugar</strong> para que estemos <strong class="key">siempre con él</strong>.
+          <span class="ref">Juan 14:2-3</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Un lugar preparado</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">En el hogar de mi Padre, hay lugar más que suficiente. Si no fuera así, ¿acaso les habría dicho que voy a prepararles un lugar? Cuando todo esté listo, volveré para llevarlos, para que siempre estén conmigo donde yo estoy.</p>
+        <cite class="verse-card__reference">Juan 14:2-3 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Juan 14:2-3</p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">2</span>En la casa de mi Padre muchas moradas hay; si así no fuera, yo os lo hubiera dicho; voy, pues, a preparar lugar para vosotros.</p>
+        <p class="passage__verse"><span class="passage__num">3</span>Y si me fuere y os preparare lugar, vendré otra vez, y os tomaré a mí mismo, para que donde yo estoy, vosotros también estéis.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Un lugar preparado</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Jesús lo dijo para consolar a sus amigos: <strong class="key">no tengan miedo</strong>.
+            <span class="ref">Juan 14:1</span></p>
+          <p class="meaning-box__text fragment">Hay un lugar preparado, y quiere que estemos con él.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">Puedes estar segura</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/check.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">No es «ojalá»: Dios quiere que <strong class="key">sepas</strong> que tienes vida eterna.
+          <span class="ref">1 Juan 5:12-13</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Puedes estar segura</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">El que tiene al Hijo tiene la vida; el que no tiene al Hijo de Dios no tiene la vida. Les he escrito estas cosas a ustedes, que creen en el nombre del Hijo de Dios, para que sepan que tienen vida eterna.</p>
+        <cite class="verse-card__reference">1 Juan 5:12-13 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>1 Juan 5:12-13</p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">12</span>El que tiene al Hijo, tiene la vida; el que no tiene al Hijo de Dios no tiene la vida.</p>
+        <p class="passage__verse"><span class="passage__num">13</span>Estas cosas os he escrito a vosotros que creéis en el nombre del Hijo de Dios, para que sepáis que tenéis vida eterna, y para que creáis en el nombre del Hijo de Dios.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Puedes estar segura</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Quien <strong class="key">tiene a Jesús</strong> tiene la vida eterna.</p>
+          <p class="meaning-box__text fragment">Dios quiere que lo sepamos con seguridad, sin miedo.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">Nadie te puede quitar</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/hands.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Jesús <strong class="key">te conoce</strong>, y <strong class="key">nadie</strong> te puede arrancar de su mano.
+          <span class="ref">Juan 10:27-28</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Nadie te puede quitar</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Mis ovejas escuchan mi voz; yo las conozco, y ellas me siguen. Les doy vida eterna, y nunca perecerán. Nadie puede quitármelas,</p>
+        <cite class="verse-card__reference">Juan 10:27-28 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Nadie te puede quitar</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Mis ovejas oyen mi voz, y yo las conozco, y me siguen, y yo les doy vida eterna; y no perecerán jamás, ni nadie las arrebatará de mi mano.</p>
+        <cite class="verse-card__reference">Juan 10:27-28 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Nadie te puede quitar</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Las ovejas conocen la voz de su pastor, y él las cuida.</p>
+          <p class="meaning-box__text fragment">Su promesa: <strong class="key">vida eterna</strong>, y nadie te la quita.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Vida eterna</span>
+      <h2 class="slide__title">De la muerte a la vida</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/plant.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">La vida eterna <strong class="key">empieza hoy</strong>, el día que crees.
+          <span class="ref">Juan 5:24</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">De la muerte a la vida</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Les digo la verdad, todos los que escuchan mi mensaje y creen en Dios, quien me envió, tienen vida eterna. Nunca serán condenados por sus pecados, pues ya han pasado de la muerte a la vida.</p>
+        <cite class="verse-card__reference">Juan 5:24 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">De la muerte a la vida</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">De cierto, de cierto os digo: El que oye mi palabra, y cree al que me envió, tiene vida eterna; y no vendrá a condenación, mas ha pasado de muerte a vida.</p>
+        <cite class="verse-card__reference">Juan 5:24 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">De la muerte a la vida</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">No es solo para después de morir: <strong class="key">empieza desde ahora</strong>.</p>
+          <p class="meaning-box__text fragment">Quien cree en Jesús ya pasó de la muerte a la vida.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Dos caminos</h2>
+    </header>
+    <div class="slide__body compare">
+      <section class="compare__column compare__column--passing fragment">
+        <h3 class="compare__title"><img class="compare__icon" data-src="../assets/icons/close.svg" alt="">Sin Jesús</h3>
+        <ul>
+          <li class="compare__item">Después viene <strong class="key">el juicio</strong><span class="compare__ref">Hebreos 9:27</span></li>
+          <li class="compare__item">No tiene la vida<span class="compare__ref">1 Juan 5:12</span></li>
+        </ul>
+      </section>
+      <section class="compare__column compare__column--lasting fragment">
+        <h3 class="compare__title"><img class="compare__icon" data-src="../assets/icons/home.svg" alt="">Con Jesús</h3>
+        <ul>
+          <li class="compare__item"><strong class="key">En casa</strong> con el Señor<span class="compare__ref">2 Corintios 5:8</span></li>
+          <li class="compare__item"><strong class="key">No más</strong> lágrimas<span class="compare__ref">Apocalipsis 21:4</span></li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Vivir para Cristo</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Pues, para mí, vivir significa vivir para Cristo y morir es aún mejor.</p>
+        <cite class="verse-card__reference">Filipenses 1:21 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Vivir para Cristo</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Porque para mí el vivir es Cristo, y el morir es ganancia.</p>
+        <cite class="verse-card__reference">Filipenses 1:21 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Vivir para Cristo</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Para quien cree en Jesús, la muerte <strong class="key">no es perder</strong>: es estar con él.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide slide--section" data-slide>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/door.svg" alt="">
+      </div>
+      <div class="media__content">
+        <span class="slide__kicker">La invitación</span>
+        <h2 class="slide__cover-title">No hay que esperar</h2>
+        <p class="slide__subtitle">Dios te invita hoy, con mucho amor y sin presión.</p>
+        <span class="ref">2 Corintios 6:2</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">No hay que esperar</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Pues Dios dice: «En el momento preciso, te oí. En el día de salvación te ayudé». Efectivamente, el «momento preciso» es ahora. Hoy es el día de salvación.</p>
+        <cite class="verse-card__reference">2 Corintios 6:2 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">No hay que esperar</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Porque dice: En tiempo aceptable te he oído, Y en día de salvación te he socorrido. He aquí ahora el tiempo aceptable; he aquí ahora el día de salvación.</p>
+        <cite class="verse-card__reference">2 Corintios 6:2 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">No hay que esperar</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text"><strong class="key">Hoy</strong> es un buen día para decidir.</p>
+          <p class="meaning-box__text fragment">No sabemos cuánto tiempo tenemos, y Dios te espera con amor.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <!-- Nota original: con mucho amor, sin presión: no sabemos cuánto tiempo tenemos. -->
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">La invitación · Paso 1 de 2</span>
+      <h2 class="slide__title"><span class="step-badge">1</span>Jesús llama a tu puerta</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/door.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Él llama; <strong class="key">tú abres la puerta</strong>.
+          <span class="ref">Apocalipsis 3:20</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title"><span class="step-badge">1</span>Jesús llama a tu puerta</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">¡Mira! Yo estoy a la puerta y llamo. Si oyes mi voz y abres la puerta, yo entraré y cenaremos juntos como amigos.</p>
+        <cite class="verse-card__reference">Apocalipsis 3:20 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title"><span class="step-badge">1</span>Jesús llama a tu puerta</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">He aquí, yo estoy a la puerta y llamo; si alguno oye mi voz y abre la puerta, entraré a él, y cenaré con él, y él conmigo.</p>
+        <cite class="verse-card__reference">Apocalipsis 3:20 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">La invitación · Paso 2 de 2</span>
+      <h2 class="slide__title"><span class="step-badge">2</span>Cree en Jesús</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/hands.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Como Marta: <strong class="key">«Sí, Señor, yo creo»</strong>.
+          <span class="ref">Romanos 10:9</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title"><span class="step-badge">2</span>Cree en Jesús</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Si declaras abiertamente que Jesús es el Señor y crees en tu corazón que Dios lo levantó de los muertos, serás salvo.</p>
+        <cite class="verse-card__reference">Romanos 10:9 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title"><span class="step-badge">2</span>Cree en Jesús</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">que si confesares con tu boca que Jesús es el Señor, y creyeres en tu corazón que Dios le levantó de los muertos, serás salvo.</p>
+        <cite class="verse-card__reference">Romanos 10:9 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Cree en Jesús</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Recuerda: todos hemos pecado, Jesús pagó por nosotros y la salvación es un <strong class="key">regalo</strong> que se recibe por fe.
+            <span class="ref">Romanos 3:23 · Efesios 2:8-9</span></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <!-- Nota original: recordar la lección 5: todos pecamos, Jesús pagó, la salvación es un regalo que se recibe por fe. -->
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">«Sí, Señor, yo creo»</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box meaning-box--prayer">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/prayer.svg" alt="">Si lo deseas, puedes orar así:</h3>
+          <p class="meaning-box__text">Señor Jesús, creo que tú eres la resurrección y la vida. Reconozco que soy pecadora; perdóname. Te abro la puerta de mi corazón: entra en mi vida. Gracias por darme vida eterna. Amén.</p>
+        </div>
+      </aside>
+      <p class="slide__note u-mt-l fragment">No son palabras mágicas: lo que importa es lo que hay en el corazón.</p>
+    </div>
+  </section>
+  <!-- Nota original: si ya oró en la lección anterior, esta puede ser una oración de confirmación y gratitud. -->
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Resumen: vida eterna</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">La muerte <strong class="key">no es el final</strong>.
+            <span class="ref">Juan 11:25</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Quien cree en Jesús <strong class="key">tiene vida eterna</strong>.
+            <span class="ref">Juan 10:28</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Jesús <strong class="key">prepara un lugar</strong> para ti.
+            <span class="ref">Juan 14:2</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Versículo para recordar</h2>
+    </header>
+    <div class="slide__body slide__body--center">
+      <blockquote class="verse-card verse-card--rvr1960 verse-card--featured">
+        <p class="verse-card__text">Le dijo Jesús: Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá.</p>
+        <cite class="verse-card__reference">Juan 11:25 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Con Dios, para siempre</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Enjugará Dios toda lágrima de los ojos de ellos; y ya no habrá muerte, ni habrá más llanto, ni clamor, ni dolor; porque las primeras cosas pasaron.</p>
+        <cite class="verse-card__reference">Apocalipsis 21:4 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Fin de la serie</h2>
+    </header>
+    <div class="slide__body">
+      <p class="slide__text">Terminamos la serie <strong class="key">«Conociendo a Dios»</strong>.</p>
+      <p class="slide__text fragment">Gracias por acompañarnos. Dios te ama y quiere estar contigo para siempre.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Versiones bíblicas</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Avisos copiados textualmente de BibleGateway. -->
+      <p class="credits__item">
+        <span class="credits__version">Nueva Traducción Viviente (NTV)</span>
+        La Santa Biblia, Nueva Traducción Viviente, © Tyndale House Foundation, 2010. Todos los derechos reservados.
+      </p>
+      <p class="credits__item">
+        <span class="credits__version">Reina-Valera 1960 (RVR1960)</span>
+        Reina-Valera 1960 ® © Sociedades Bíblicas en América Latina, 1960. Renovado © Sociedades Bíblicas Unidas, 1988. Utilizado con permiso.
+      </p>
+      <a class="slide__home-link" href="../" data-focusable>Volver al inicio</a>
+    </div>
+  </section>
+
+</main>
+
+<div class="progress" data-progress aria-hidden="true"></div>
+
+</body>
+</html>

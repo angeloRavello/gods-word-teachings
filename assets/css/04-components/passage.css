@@ -1,0 +1,85 @@
+/*
+ * passage.css
+ * Full passage reading: a compact header (version badge + reference + pager)
+ * and a verse card whose verses carry visible numbers. Used together with
+ * .verse-card (--ntv / --rvr1960) from verse-card.css.
+ * Defines: .passage, .passage__header, .passage__label, .passage__label--ntv,
+ *          .passage__label--rvr1960, .passage__version, .passage__pager,
+ *          .passage__verse, .passage__num
+ */
+.passage__header {
+  margin-bottom: var(--space-s);
+}
+
+.passage__label {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-text);
+}
+
+.passage__version {
+  display: inline-block;
+  margin-right: var(--space-s);
+  padding: 0 var(--space-s);
+  border-radius: var(--radius-small);
+  color: var(--color-on-accent);
+}
+
+.passage__label--ntv {
+  color: var(--color-ntv);
+}
+
+.passage__label--ntv .passage__version {
+  background: var(--color-ntv);
+}
+
+.passage__label--rvr1960 {
+  color: var(--color-rvr);
+}
+
+.passage__label--rvr1960 .passage__version {
+  background: var(--color-rvr);
+}
+
+.passage__pager {
+  margin-left: var(--space-s);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+}
+
+.passage {
+  padding-top: var(--space-s);
+  padding-bottom: var(--space-s);
+}
+
+.passage__verse {
+  font-size: var(--font-size-verse);
+  line-height: var(--line-height-text);
+  margin-bottom: var(--space-s);
+}
+
+.passage__verse:last-child {
+  margin-bottom: 0;
+}
+
+/* Verse number: always visible, in the version color */
+.passage__num {
+  display: inline-block;
+  margin-right: var(--space-xs);
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  vertical-align: top;
+  position: relative;
+  top: 0.35em;
+}
+
+.passage.verse-card--ntv .passage__num {
+  color: var(--color-ntv);
+}
+
+.passage.verse-card--rvr1960 .passage__num {
+  color: var(--color-rvr);
+}

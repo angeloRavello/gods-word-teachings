@@ -10,12 +10,17 @@
 
   function handleAction(event) {
     switch (event.detail.action) {
-      case 'up':
+      // 1 / 2 del control (y ← →) cambian de página, como en una presentación.
       case 'prev':
+        TV.paging.prevPage();
+        break;
+      case 'next':
+        TV.paging.nextPage();
+        break;
+      case 'up':
         TV.focus.moveFocus(-1);
         break;
       case 'down':
-      case 'next':
         TV.focus.moveFocus(1);
         break;
       case 'select':
@@ -32,9 +37,16 @@
     }
   }
 
+  // El foco recorre toda la página: primero las presentaciones de la página
+  // visible, luego el paginador y al final las herramientas, así el
+  // diagnóstico nunca es lo primero que se elige.
+  function resetFocus() {
+    TV.focus.setScope(document.querySelector('.page'));
+  }
+
   document.addEventListener('tv:action', handleAction);
+  document.addEventListener('tv:pagechange', resetFocus);
   renderVersion();
-  // El foco recorre toda la página: primero las presentaciones y al final
-  // el enlace de diagnóstico, así nunca es lo primero que se elige.
-  TV.focus.setScope(document.querySelector('.page'));
+  // La versión se escribe antes de paginar: ocupa lugar en el pie.
+  TV.paging.init(document.querySelector('.home-menu'), document.querySelector('[data-pager]'));
 })(window, document);

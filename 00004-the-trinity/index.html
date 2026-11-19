@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Un solo Dios, tres personas</title>
+
+  <link rel="stylesheet" href="../assets/css/01-tokens.css">
+  <link rel="stylesheet" href="../assets/css/02-base.css">
+  <link rel="stylesheet" href="../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../assets/css/04-components/slide.css">
+  <link rel="stylesheet" href="../assets/css/04-components/verse-card.css">
+  <link rel="stylesheet" href="../assets/css/04-components/meaning-box.css">
+  <link rel="stylesheet" href="../assets/css/04-components/bullet-list.css">
+  <link rel="stylesheet" href="../assets/css/04-components/progress.css">
+  <link rel="stylesheet" href="../assets/css/04-components/passage.css">
+  <link rel="stylesheet" href="../assets/css/04-components/step-badge.css">
+  <link rel="stylesheet" href="../assets/css/04-components/compare.css">
+  <link rel="stylesheet" href="../assets/css/05-utilities.css">
+  <link rel="stylesheet" href="../assets/css/06-animations.css">
+
+  <script defer src="../assets/js/core/namespace.js"></script>
+  <script defer src="../assets/js/core/keys.js"></script>
+  <script defer src="../assets/js/modules/deck.js"></script>
+  <script defer src="../assets/js/modules/fragments.js"></script>
+  <script defer src="../assets/js/modules/focus.js"></script>
+  <script defer src="../assets/js/modules/progress.js"></script>
+  <script defer src="../assets/js/modules/preload.js"></script>
+  <script defer src="../assets/js/modules/fullscreen.js"></script>
+  <script defer src="../assets/js/modules/pointer.js"></script>
+  <script defer src="../assets/js/modules/scroll-nav.js"></script>
+  <script defer src="../assets/js/pages/presentation.js"></script>
+</head>
+<body data-home-url="../">
+<!-- Migrado de la lección 03 (Un solo Dios, tres personas). Se conservan solo NTV y RVR1960; se descartaron TLA y NBLA. Nota original de 2 Corintios 13:14 (NTV): «Que la gracia del Señor Jesucristo, el amor de Dios y la comunión del Espíritu Santo sean con todos ustedes.» -->
+<main class="deck">
+  <section class="slide slide--cover" data-slide>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/trinity.svg" alt="">
+      </div>
+      <div class="media__content">
+        <span class="slide__kicker">Serie «Conociendo a Dios» · 1 de 6</span>
+        <h1 class="slide__cover-title">Un solo Dios, tres personas</h1>
+        <span class="ref">Mateo 3:13-17</span>
+        <button class="slide__action slide__action--small u-mt-l" type="button" data-focusable data-fullscreen-toggle>Iniciar pantalla completa</button>
+      </div>
+    </div>
+    <p class="slide__note">Textos bíblicos: Nueva Traducción Viviente (NTV) y Reina-Valera 1960 (RVR1960). Avisos de derechos al final.</p>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Para pensar</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure">
+        <img data-src="../assets/icons/speech.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__text">¿Quién es Dios? ¿Cómo es?</p>
+        <p class="slide__text fragment">Hoy empezamos una serie de seis lecciones. Veremos que hay <strong class="key">un solo Dios</strong>, que se nos muestra en <strong class="key">tres personas</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Dos versiones de la Biblia</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text"><strong class="key">NTV:</strong> Nueva Traducción Viviente.</p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text"><strong class="key">RVR1960:</strong> Reina-Valera 1960.</p>
+        </li>
+      </ul>
+      <p class="slide__text u-mt-l fragment">Cada pasaje lo leeremos primero en NTV y después en RVR1960.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Un solo Dios</span>
+      <h2 class="slide__title">Hay un solo Dios</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/light.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">La Biblia es clara: hay <strong class="key">un solo Dios</strong>. No hay muchos dioses.
+          <span class="ref">Deuteronomio 6:4</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Hay un solo Dios</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">¡Escucha, Israel! El Señor es nuestro Dios, solamente el Señor.</p>
+        <cite class="verse-card__reference">Deuteronomio 6:4 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">Oye, Israel: Jehová nuestro Dios, Jehová uno es.</p>
+        <cite class="verse-card__reference">Deuteronomio 6:4 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Hay un solo Dios</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Nota original: empezamos por lo seguro: hay un solo Dios. Ahora vemos una historia donde aparecen los tres al mismo tiempo. -->
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">No hay muchos dioses: hay <strong class="key">uno solo</strong>.</p>
+          <p class="meaning-box__text fragment">Pero ese único Dios se nos muestra en tres personas. Vamos a verlo en una historia donde aparecen el Padre, el Hijo y el Espíritu Santo al mismo tiempo.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El bautismo de Jesús</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/water.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__text">Jesús fue al río Jordán para que Juan lo bautizara. <span class="ref">Mateo 3:13</span></p>
+        <p class="slide__text fragment">Mientras lees, fíjate: ¿quién está en el agua?, ¿quién baja como paloma?, ¿quién habla desde el cielo?</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Mateo 3:13-14<span class="passage__pager">(1 de 3)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">13</span>Luego <strong class="key">Jesús</strong> fue de Galilea al río Jordán para que Juan lo bautizara,</p>
+        <p class="passage__verse"><span class="passage__num">14</span>pero Juan intentó convencerlo de que no lo hiciera. —Yo soy el que necesita que tú me bautices—dijo Juan—, entonces, ¿por qué vienes tú a mí?</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Mateo 3:15<span class="passage__pager">(2 de 3)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">15</span>Pero Jesús le dijo: —Así debe hacerse, porque tenemos que cumplir con todo lo que Dios exige. Entonces Juan aceptó bautizarlo.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--ntv"><abbr class="passage__version" title="Nueva Traducción Viviente">NTV</abbr>Mateo 3:16-17<span class="passage__pager">(3 de 3)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv passage">
+        <p class="passage__verse"><span class="passage__num">16</span>Después del bautismo, mientras <strong class="key">Jesús salía del agua</strong>, los cielos se abrieron y vio al <strong class="key">Espíritu de Dios que descendía sobre él como una paloma.</strong></p>
+        <p class="passage__verse"><span class="passage__num">17</span>Y <strong class="key">una voz dijo desde el cielo</strong>: «Este es mi Hijo muy amado, quien me da gran gozo».</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Mateo 3:13-15<span class="passage__pager">(1 de 2)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">13</span>Entonces <strong class="key">Jesús</strong> vino de Galilea a Juan al Jordán, para ser bautizado por él.</p>
+        <p class="passage__verse"><span class="passage__num">14</span>Mas Juan se le oponía, diciendo: Yo necesito ser bautizado por ti, ¿y tú vienes a mí?</p>
+        <p class="passage__verse"><span class="passage__num">15</span>Pero Jesús le respondió: Deja ahora, porque así conviene que cumplamos toda justicia. Entonces le dejó.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header passage__header">
+      <p class="passage__label passage__label--rvr1960"><abbr class="passage__version" title="Reina-Valera 1960">RVR1960</abbr>Mateo 3:16-17<span class="passage__pager">(2 de 2)</span></p>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960 passage">
+        <p class="passage__verse"><span class="passage__num">16</span>Y Jesús, después que fue bautizado, <strong class="key">subió luego del agua</strong>; y he aquí los cielos le fueron abiertos, y vio al <strong class="key">Espíritu de Dios que descendía como paloma</strong>, y venía sobre él.</p>
+        <p class="passage__verse"><span class="passage__num">17</span>Y hubo <strong class="key">una voz de los cielos</strong>, que decía: Este es mi Hijo amado, en quien tengo complacencia.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Tres personas en el Jordán</span>
+      <h2 class="slide__title">El Hijo: en el agua</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/water.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Jesús es <strong class="key">Dios Hijo</strong>: se hizo hombre y se acercó a nosotros.
+          <span class="ref">Mateo 3:16</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Hijo: en el agua</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">Después del bautismo, mientras Jesús salía del agua…</p>
+        <cite class="verse-card__reference">Mateo 3:16 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">Y Jesús, después que fue bautizado, subió luego del agua;…</p>
+        <cite class="verse-card__reference">Mateo 3:16 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Hijo: en el agua</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Nota original: lo veremos en detalle en la lección 3. -->
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Jesús es <strong class="key">Dios Hijo</strong>. Se hizo hombre y se acercó a nosotros.</p>
+          <p class="meaning-box__text fragment">Lo veremos con más detalle en la lección 3.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Tres personas en el Jordán</span>
+      <h2 class="slide__title">El Espíritu: como paloma</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/dove.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">El <strong class="key">Espíritu Santo</strong> bajó sobre Jesús.
+          <span class="ref">Mateo 3:16</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Espíritu: como paloma</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">…vio al Espíritu de Dios que descendía sobre él como una paloma.</p>
+        <cite class="verse-card__reference">Mateo 3:16 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">…y vio al Espíritu de Dios que descendía como paloma, y venía sobre él.</p>
+        <cite class="verse-card__reference">Mateo 3:16 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Espíritu: como paloma</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Nota original: lo veremos en detalle en la lección 4. -->
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">El Espíritu Santo es una <strong class="key">persona distinta</strong> del Hijo: bajó sobre Él.</p>
+          <p class="meaning-box__text fragment">Lo veremos con más detalle en la lección 4.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Tres personas en el Jordán</span>
+      <h2 class="slide__title">El Padre: la voz del cielo</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/cloud.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">El <strong class="key">Padre</strong> habla desde el cielo y llama a Jesús «mi Hijo muy amado».
+          <span class="ref">Mateo 3:17</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Padre: la voz del cielo</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">Y una voz dijo desde el cielo: «Este es mi Hijo muy amado, quien me da gran gozo».</p>
+        <cite class="verse-card__reference">Mateo 3:17 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">Y hubo una voz de los cielos, que decía: Este es mi Hijo amado, en quien tengo complacencia.</p>
+        <cite class="verse-card__reference">Mateo 3:17 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Padre: la voz del cielo</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Nota original: el Padre habla AL Hijo mientras el Espíritu desciende; por eso no es una sola persona cambiando de forma. -->
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">El Padre habla <strong class="key">al Hijo</strong> mientras el Espíritu baja.</p>
+          <p class="meaning-box__text fragment">Los tres están a la vez y son personas distintas. Lo veremos con más detalle en la lección 2.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Cada persona es Dios</span>
+      <h2 class="slide__title">Jesús es Dios</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/crown.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Jesús no es solo un buen maestro: es <strong class="key">uno con el Padre</strong>.
+          <span class="ref">Juan 10:30</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Jesús es Dios</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">El Padre y yo somos uno.</p>
+        <cite class="verse-card__reference">Juan 10:30 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">Yo y el Padre uno somos.</p>
+        <cite class="verse-card__reference">Juan 10:30 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Jesús es Dios</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Nota original: Juan 1:1 (NTV) «la Palabra era Dios»; se lee completo en la lección 3. -->
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Jesús dijo que Él y el Padre son <strong class="key">uno</strong>.</p>
+          <p class="meaning-box__text fragment">Por eso es Dios, no solo un maestro.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Cada persona es Dios</span>
+      <h2 class="slide__title">El Espíritu Santo es Dios</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/dove.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Mentirle al Espíritu Santo es <strong class="key">mentirle a Dios</strong>.
+          <span class="ref">Hechos 5:3-4</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Espíritu Santo es Dios</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">Le mentiste al Espíritu Santo […] ¡No nos mentiste a nosotros sino a Dios!</p>
+        <cite class="verse-card__reference">Hechos 5:3-4 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">…para que mintieses al Espíritu Santo, […] No has mentido a los hombres, sino a Dios.</p>
+        <cite class="verse-card__reference">Hechos 5:3-4 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">El Espíritu Santo es Dios</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Pedro le habla a Ananías. Primero dice «al Espíritu Santo» y luego «a Dios»: para Pedro es lo mismo.</p>
+          <p class="meaning-box__text fragment">El Espíritu Santo <strong class="key">es Dios</strong>.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Desde el principio</span>
+      <h2 class="slide__title">Desde el principio</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/plant.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Un solo Dios que dice <strong class="key">«hagamos»</strong> y <strong class="key">«nuestra»</strong>.
+          <span class="ref">Génesis 1:26</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Desde el principio</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Entonces Dios dijo: «Hagamos a los seres humanos a nuestra imagen, para que sean como nosotros…»</p>
+        <cite class="verse-card__reference">Génesis 1:26 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Desde el principio</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Entonces dijo Dios: Hagamos al hombre a nuestra imagen, conforme a nuestra semejanza;…</p>
+        <cite class="verse-card__reference">Génesis 1:26 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Desde el principio</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Es un detalle que aparece en la <strong class="key">primera página</strong> de la Biblia.</p>
+          <p class="meaning-box__text fragment">Desde la creación, Dios se muestra como un solo Dios en tres personas.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Un solo nombre</span>
+      <h2 class="slide__title">Un solo nombre</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/bible.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">Dice <strong class="key">«el nombre»</strong>, no «los nombres»: un solo Dios, tres personas.
+          <span class="ref">Mateo 28:19</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Un solo nombre</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv fragment">
+        <p class="verse-card__text">…bautizándolos en el nombre del Padre y del Hijo y del Espíritu Santo.</p>
+        <cite class="verse-card__reference">Mateo 28:19 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+      <blockquote class="verse-card verse-card--rvr1960 fragment">
+        <p class="verse-card__text">…bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo;</p>
+        <cite class="verse-card__reference">Mateo 28:19 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Un solo nombre</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Jesús mismo nombra a las <strong class="key">tres personas</strong> juntas.</p>
+          <p class="meaning-box__text fragment">Y dice «el nombre», en singular: es un solo Dios.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">¿Cómo es esto?</h2>
+    </header>
+    <div class="slide__body compare">
+      <section class="compare__column compare__column--passing fragment">
+        <h3 class="compare__title"><img class="compare__icon" data-src="../assets/icons/close.svg" alt="">No es así</h3>
+        <ul>
+          <li class="compare__item">No son <strong class="key">tres dioses</strong><span class="compare__ref">Deuteronomio 6:4</span></li>
+          <li class="compare__item">No es una persona que cambia de forma<span class="compare__ref">Mateo 3:16-17</span></li>
+        </ul>
+      </section>
+      <section class="compare__column compare__column--lasting fragment">
+        <h3 class="compare__title"><img class="compare__icon" data-src="../assets/icons/check.svg" alt="">Es así</h3>
+        <ul>
+          <li class="compare__item"><strong class="key">Un solo Dios</strong><span class="compare__ref">Deuteronomio 6:4</span></li>
+          <li class="compare__item"><strong class="key">Tres personas</strong><span class="compare__ref">Mateo 28:19</span></li>
+          <li class="compare__item">Las tres están juntas<span class="compare__ref">Mateo 3:16-17</span></li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Más grande que nuestra mente</span>
+      <h2 class="slide__title">Más grande que nuestra mente</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/globe.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">No entendemos <strong class="key">todo</strong> sobre Dios, pero <strong class="key">sí podemos conocerlo</strong>.
+          <span class="ref">Isaías 55:9</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Más grande que nuestra mente</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Pues así como los cielos están más altos que la tierra, así mis caminos están más altos que sus caminos y mis pensamientos, más altos que sus pensamientos.</p>
+        <cite class="verse-card__reference">Isaías 55:9 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Más grande que nuestra mente</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Como son más altos los cielos que la tierra, así son mis caminos más altos que vuestros caminos, y mis pensamientos más que vuestros pensamientos.</p>
+        <cite class="verse-card__reference">Isaías 55:9 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Más grande que nuestra mente</h2>
+    </header>
+    <div class="slide__body">
+      <aside class="meaning-box">
+        <div class="meaning-box__content">
+          <h3 class="meaning-box__title"><img class="meaning-box__icon" data-src="../assets/icons/meaning.svg" alt="">¿Qué significa?</h3>
+          <p class="meaning-box__text">Es normal que nos cueste entenderlo: Dios es <strong class="key">más grande que nosotros</strong>.</p>
+          <p class="meaning-box__text fragment">Lo importante es creer lo que la Biblia dice.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">Para terminar</span>
+      <h2 class="slide__title">Dios quiere que lo conozcas</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/heart.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point"><strong class="key">Conocer a Dios</strong> es tener vida eterna.
+          <span class="ref">Juan 17:3</span></p>
+        <p class="slide__note fragment">Este versículo resume toda la serie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Dios quiere que lo conozcas</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Y la manera de tener vida eterna es conocerte a ti, el único Dios verdadero, y a Jesucristo, a quien tú enviaste a la tierra.</p>
+        <cite class="verse-card__reference">Juan 17:3 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Dios quiere que lo conozcas</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Y esta es la vida eterna: que te conozcan a ti, el único Dios verdadero, y a Jesucristo, a quien has enviado.</p>
+        <cite class="verse-card__reference">Juan 17:3 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <span class="slide__kicker">La buena noticia</span>
+      <h2 class="slide__title"><span class="step-badge">1</span>El Padre dio a su Hijo</h2>
+    </header>
+    <div class="slide__body media">
+      <div class="media__figure media__figure--large">
+        <img data-src="../assets/icons/gift.svg" alt="">
+      </div>
+      <div class="media__content">
+        <p class="slide__point">El Padre <strong class="key">amó</strong>, el Hijo <strong class="key">vino</strong>, para que <strong class="key">tú</strong> tengas vida.
+          <span class="ref">Juan 3:16</span></p>
+        <p class="slide__note fragment">Lo veremos con más detalle en la lección 5.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title"><span class="step-badge">1</span>El Padre dio a su Hijo</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--ntv">
+        <p class="verse-card__text">Pues Dios amó tanto al mundo que dio a su único Hijo, para que todo el que crea en él no se pierda, sino que tenga vida eterna.</p>
+        <cite class="verse-card__reference">Juan 3:16 <abbr class="verse-card__version" title="Nueva Traducción Viviente">NTV</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title"><span class="step-badge">1</span>El Padre dio a su Hijo</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.</p>
+        <cite class="verse-card__reference">Juan 3:16 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Resumen: un solo Dios</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Hay un solo Dios.
+            <span class="ref">Deuteronomio 6:4</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Padre, Hijo y Espíritu Santo, juntos.
+            <span class="ref">Mateo 3:16-17</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Jesús es uno con el Padre.
+            <span class="ref">Juan 10:30</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Resumen: tres personas</h2>
+    </header>
+    <div class="slide__body">
+      <ul class="bullet-list">
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">El Espíritu Santo es Dios.
+            <span class="ref">Hechos 5:3-4</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Un solo nombre, tres personas.
+            <span class="ref">Mateo 28:19</span></p>
+        </li>
+        <li class="bullet-list__item fragment">
+          <img class="bullet-list__icon" data-src="../assets/icons/bullet.svg" alt="">
+          <p class="bullet-list__text">Podemos conocer a Dios.
+            <span class="ref">Juan 17:3</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Versículo para recordar</h2>
+    </header>
+    <div class="slide__body slide__body--center">
+      <blockquote class="verse-card verse-card--rvr1960 verse-card--featured">
+        <p class="verse-card__text">La gracia del Señor Jesucristo, el amor de Dios, y la comunión del Espíritu Santo sean con todos vosotros. Amén.</p>
+        <cite class="verse-card__reference">2 Corintios 13:14 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Un solo Dios, tres personas</h2>
+    </header>
+    <div class="slide__body">
+      <blockquote class="verse-card verse-card--rvr1960">
+        <p class="verse-card__text">Este es mi Hijo amado, en quien tengo complacencia.</p>
+        <cite class="verse-card__reference">Mateo 3:17 <abbr class="verse-card__version" title="Reina-Valera 1960">RVR1960</abbr></cite>
+      </blockquote>
+      <p class="slide__text u-mt-l fragment"><strong class="key">Próxima lección:</strong> Dios Padre</p>
+    </div>
+  </section>
+
+  <section class="slide" data-slide>
+    <header class="slide__header">
+      <h2 class="slide__title">Versiones bíblicas</h2>
+    </header>
+    <div class="slide__body">
+      <!-- Avisos copiados textualmente de BibleGateway. -->
+      <p class="credits__item">
+        <span class="credits__version">Nueva Traducción Viviente (NTV)</span>
+        La Santa Biblia, Nueva Traducción Viviente, © Tyndale House Foundation, 2010. Todos los derechos reservados.
+      </p>
+      <p class="credits__item">
+        <span class="credits__version">Reina-Valera 1960 (RVR1960)</span>
+        Reina-Valera 1960 ® © Sociedades Bíblicas en América Latina, 1960. Renovado © Sociedades Bíblicas Unidas, 1988. Utilizado con permiso.
+      </p>
+      <a class="slide__home-link" href="../" data-focusable>Volver al inicio</a>
+    </div>
+  </section>
+
+</main>
+
+<div class="progress" data-progress aria-hidden="true"></div>
+
+</body>
+</html>

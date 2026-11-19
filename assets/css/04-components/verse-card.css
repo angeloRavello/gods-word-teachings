@@ -70,3 +70,8 @@
 .verse-card--featured .verse-card__text {
   font-size: var(--font-size-verse-large);
 }
+
+/* NTV and RVR1960 cards stacked in the same view */
+.verse-card + .verse-card {
+  margin-top: var(--space-s);
+}

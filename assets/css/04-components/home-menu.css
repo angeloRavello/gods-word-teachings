@@ -3,26 +3,39 @@
  * Presentation list on the home page, navigable with up/down + OK.
  * Defines: .home-menu, .home-menu__item, .home-menu__link,
  *          .home-menu__number, .home-menu__title, .home-menu__footer,
+ *          .home-menu__header, .home-menu__meta,
  *          .home-menu__hint, .home-menu__version, .home-menu__tools,
  *          .home-menu__tool-link
  */
 .home-menu {
   flex: 1 1 auto;
   min-height: 0;
+  /* Never scrolls: when the list does not fit, it is split into pages (paging.js) */
   overflow: hidden;
   /* Room for the focus ring and the scale, so the focused item is never clipped */
-  padding: var(--space-m);
+  padding: var(--space-s) var(--space-m);
 }
 
 .home-menu__item {
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-s);
+}
+
+/* Title on the left; hint and version (not focusable) on the right */
+.home-menu__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.home-menu__meta {
+  text-align: right;
 }
 
 .home-menu__link {
   display: flex;
   align-items: center;
   max-width: 80vw;
-  padding: var(--space-m) var(--space-l);
+  padding: var(--space-s) var(--space-l);
   border: var(--border-thin) solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-surface);
@@ -75,6 +88,7 @@
 
 /* Secondary, technical link/button: small and quiet, but still clearly focusable */
 .home-menu__tool-link {
+  white-space: nowrap;
   margin-left: var(--space-m);
   padding: var(--space-xs) var(--space-m);
   background: transparent;
@@ -96,4 +110,47 @@
   color: var(--color-text);
   -webkit-transform: scale(var(--focus-scale));
   transform: scale(var(--focus-scale));
+}
+
+/*
+ * Home pager: the list is shown one page at a time, like slides.
+ * Defines: .home-pager, .home-pager__button, .home-pager__label
+ */
+.home-pager {
+  display: flex;
+  align-items: center;
+}
+
+.home-pager__button {
+  white-space: nowrap;
+  padding: var(--space-xs) var(--space-l);
+  border: var(--border-thin) solid var(--color-text);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-ref);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-text);
+  cursor: pointer;
+}
+
+.home-pager__button.is-focused {
+  background: var(--color-text);
+  color: var(--color-bg);
+  -webkit-transform: scale(var(--focus-scale));
+  transform: scale(var(--focus-scale));
+}
+
+/* Disabled at the first/last page: kept in place so the layout does not jump */
+.home-pager__button[disabled] {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.home-pager__label {
+  white-space: nowrap;
+  margin: 0 var(--space-m);
+  font-size: var(--font-size-ref);
+  color: var(--color-text-muted);
 }

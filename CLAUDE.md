@@ -12,7 +12,10 @@ Crear presentaciones en HTML, simples y fáciles de leer, para reemplazar los PP
 ## Público y propósito actual
 - Las presentaciones son **para mi abuela**: una persona mayor que las verá en la TV, a distancia, a su propio ritmo.
 - Tema: **Dios, según lo que enseña la Biblia.** El enfoque es que se **entienda**: lenguaje sencillo, cálido y respetuoso, una idea a la vez.
-- Versiones bíblicas: **NTV** (Nueva Traducción Viviente) y **RVR1960** (Reina-Valera 1960).
+- Versiones bíblicas: **NTV** (Nueva Traducción Viviente) y **RVR1960** (Reina-Valera 1960). No usar otras (TLA y NBLA se usaban en el proyecto anterior de PPT y se descartaron).
+- **Meta final: presentarle el evangelio para que pueda ser salva.** Cada lección, sea cual sea el tema, termina conectando con la salvación (pecado, gracia, fe en Jesús, arrepentimiento) usando los puntos ya enseñados.
+- Idioma de las diapositivas: **español neutro con "tú"** (nunca voseo). Cuando el texto le habla directamente a ella, usar femenino ("¿Cómo puedo ser salva?", "soy pecadora").
+- Origen: este proyecto reemplaza a uno anterior que generaba `.pptx`. Sus reglas originales están archivadas en `docs/legacy/pptx-project-CLAUDE.md` y ya están integradas aquí.
 
 ## Contexto (por qué este enfoque)
 - La duplicación de pantalla desde el celular (Smart View / AirPlay) se queda cargando y no es confiable.
@@ -28,6 +31,10 @@ Crear presentaciones en HTML, simples y fáciles de leer, para reemplazar los PP
 - **Toda cita bíblica lleva su referencia completa y la versión**: libro, capítulo, versículo(s) y abreviatura. Ejemplos: `Juan 3:16 (NTV)`, `Salmo 23:1-3 (RVR1960)`.
 - **Cada punto de enseñanza** indica en qué capítulo y versículo se basa, aunque el texto no se cite completo. Ejemplo: `Dios nos cuida — Mateo 6:26`.
 - El texto citado debe ser **literal y exacto** según la versión indicada. **Nunca** inventar, completar de memoria ni parafrasear dentro de una cita. Antes de publicar, verificar cada versículo contra una fuente confiable (BibleGateway, Biblia.com o la Biblia física). Si no se pudo verificar, marcarlo con `<!-- VERIFICAR: Juan 3:16 NTV -->` y avisar.
+- **Todo debe tener sustento bíblico** (pedido expreso del usuario): cada punto de enseñanza muestra en pantalla el versículo que lo respalda, citado y con referencia. También los versículos que solo aparecen en comentarios HTML deben ser literales.
+- Cómo traer el texto de BibleGateway: **un pasaje por URL** (las páginas con varias referencias se cortan). Copiarlo literal y limpiar los artefactos de la página: letras de notas al pie, `¶`, guiones bajos de cursiva y el escape `\-»` (dejar solo `»`).
+- Para omitir parte de un versículo usar `…` o `[…]`, sin cambiar ninguna palabra de lo citado.
+- Se pueden destacar frases clave **dentro** del versículo con `<strong class="key">` (máx. 1–3 por diapositiva), como en el proyecto anterior.
 - Las explicaciones propias van **separadas visualmente** del texto bíblico. Nunca deben parecer parte de la Escritura (ver componentes abajo).
 - No sacar versículos de contexto. Si un versículo depende del anterior, incluir el rango o explicarlo.
 - Contenido fiel al texto, sin entrar en polémicas doctrinales ni denominacionales.
@@ -37,7 +44,8 @@ Crear presentaciones en HTML, simples y fáciles de leer, para reemplazar los PP
 - Cómo mostrarlas sin perder legibilidad:
   - Si ambas caben cómodas en una vista (respetando los tamaños mínimos de letra), se muestran en la misma diapositiva como dos pasos consecutivos: con `→` aparece la tarjeta NTV y con el siguiente `→` la tarjeta RVR1960 debajo.
   - Si el pasaje es largo, NTV ocupa una diapositiva y RVR1960 la **diapositiva inmediatamente siguiente**, con el mismo título y la misma referencia.
-  - Nunca reducir la letra para que quepan las dos.
+  - **Lectura del pasaje principal (completo)**: primero el pasaje entero en NTV y, enseguida, el pasaje entero en RVR1960. Se divide en tantas diapositivas como haga falta y cada una lleva versión + referencia del tramo + paginación, ej. `Marcos 2:1-5 NTV (1 de 3)`. Números de versículo visibles. Una diapositiva nunca mezcla tramos no contiguos (ej. Job 9:12 y 9:32), y se reparten los versículos para que la última no quede con uno solo.
+  - Nunca reducir la letra para que quepan las dos. Si no entra, se divide en más diapositivas.
 - **Citas breves o para recordar** (referencias dentro de un punto, el resumen, el "Versículo para recordar", frases cortas de apoyo): se puede usar **solo RVR1960**.
 - La versión siempre debe verse clara en cada tarjeta de versículo, también con su color (ver paleta).
 
@@ -45,18 +53,42 @@ Crear presentaciones en HTML, simples y fáciles de leer, para reemplazar los PP
 - NTV (© Tyndale House Foundation) y RVR1960 (© Sociedades Bíblicas en América Latina, renovado © Sociedades Bíblicas Unidas) permiten citas limitadas en usos no comerciales, siempre con el aviso de copyright. Cada presentación termina con una **diapositiva de créditos** con los avisos de ambas versiones. La portada lleva una nota breve en el pie.
 - Citar versículos puntuales; no copiar capítulos ni libros completos.
 
-### Estructura recomendada de cada presentación (8–15 diapositivas)
-1. **Portada**: título en forma de pregunta o frase simple (ej. "¿Quién es Dios?").
-2. **Pregunta de inicio**: algo cercano que invite a pensar.
-3. **Puntos** (2–4 en total). Cada uno sigue el mismo ritmo:
+### Estructura de cada presentación
+La cantidad de diapositivas la marca el contenido: la lectura completa del pasaje hace que una lección tenga 25–45 diapositivas, y está bien. Lo que no se negocia es una idea por vista y la letra grande.
+1. **Portada**: título en forma de pregunta o frase simple (ej. "¿Quién es Dios?") + **referencia del pasaje principal**. Si es parte de una serie: `Serie «Conociendo a Dios» · 3 de 6`.
+2. **Pregunta de inicio o contexto**: algo cercano que invite a pensar, o quién es el personaje del pasaje.
+3. **Lectura del pasaje principal completo**: todo en NTV y luego todo en RVR1960 (ver "Uso de las dos versiones"). Una diapositiva breve antes avisa: "Vamos a leer en dos versiones: NTV y RVR1960".
+4. **Puntos clave** (los que el pasaje pida). Cada uno sigue el mismo ritmo:
    a. Idea en una frase corta + referencia.
-   b. "La Biblia dice": tarjeta del pasaje en **NTV**.
-   c. Inmediatamente después: el mismo pasaje en **RVR1960** (obligatorio).
-   d. "¿Qué significa?": explicación en 1–3 frases sencillas, con ilustración o ícono si ayuda.
-4. **Resumen**: los puntos en lista corta, cada uno con su referencia (citas breves solo en RVR1960 si se incluyen).
-5. **Versículo para recordar**: uno solo, grande, en **RVR1960**.
-6. **Cierre**: una reflexión o una oración corta (opcional).
-7. **Créditos**: versiones usadas y avisos de copyright.
+   b. "La Biblia dice": tarjeta del versículo que lo respalda en **NTV**.
+   c. Inmediatamente después: el mismo versículo en **RVR1960** (obligatorio).
+   d. "¿Qué significa?": explicación en 1–3 frases sencillas, con ícono si ayuda.
+5. **Si se estudian varios pasajes** (ej. Job 9 → 38 → 42): repetir "lectura completa → puntos" por cada pasaje, con una portada de parte (`slide--section`) entre ellos.
+6. **Puente al evangelio**: conectar la lección con la salvación usando los puntos ya vistos.
+7. **El evangelio** en pasos numerados (`Paso 1 de 6`), cada uno con título, versículo (NTV + RVR1960) y una frase clave. Los 6 pasos base: todos hemos pecado (Romanos 3:23) → el pecado tiene un precio (Romanos 6:23) → Dios te ama (Romanos 5:8) → Jesús pagó por nosotros (Isaías 53:5) → es un regalo, no se gana (Efesios 2:8-9) → cómo recibirlo: arrepentirse y creer (Romanos 10:9). En una serie, solo las lecciones centradas en la salvación llevan los 6 pasos; las demás cierran con un puente corto de 1–2 pasos para no repetir.
+8. **Oración** (opcional, sin presión): oración corta en primera persona y femenino, con la nota "No son palabras mágicas: lo que importa es lo que hay en el corazón."
+9. **Resumen**: los puntos en lista corta, cada uno con su referencia (citas breves solo en RVR1960 si se incluyen).
+10. **Versículo para recordar**: uno solo, grande, en **RVR1960**.
+11. **Cierre**: una frase final y, si hay serie, "Próxima lección: …".
+12. **Créditos**: versiones usadas y avisos de copyright, y "Volver al inicio".
+
+La TV no tiene notas del orador: el contexto que antes iba en notas (trasfondo de la historia, versículos extra) va en el "¿Qué significa?" o en una diapositiva de contexto. Si no aporta a su lectura, se deja como comentario HTML para no perderlo.
+
+### Series
+- **«Conociendo a Dios»** (6 lecciones): Trinidad → Padre → Hijo → Espíritu Santo → Salvación → Vida eterna. Las 4 primeras cierran con un puente corto al evangelio; "Salvación" lleva los 6 pasos y la oración; "Vida eterna" lleva la invitación final.
+
+### Lecciones migradas del proyecto PPT
+| Carpeta | Pasaje principal | Énfasis |
+|---|---|---|
+| `00002-the-paralyzed-man` | Marcos 2:1-12 (paralelos Lucas 5:17-26, Mateo 9:1-8) | Jesús primero perdona y luego sana: **la salvación importa más que la salud física**. |
+| `00003-do-not-question-god` | Job 9:1-12, 9:32-35, 38:1-18, 42:1-6 | No cuestionar a Dios; el "mediador" de Job 9:33 lleva a 1 Timoteo 2:5. |
+| `00004-the-trinity` | Mateo 3:13-17 | Serie 1/6: un solo Dios en tres personas. |
+| `00005-god-the-father` | Lucas 15:11-24 | Serie 2/6: el Padre que espera y perdona. |
+| `00006-god-the-son` | Juan 1:1-14 | Serie 3/6: Jesús es Dios hecho hombre. |
+| `00007-the-holy-spirit` | Juan 14:15-27 | Serie 4/6: el Espíritu Santo, Ayudador. |
+| `00008-salvation` | Juan 3:1-17 | Serie 5/6: nacer de nuevo; evangelio completo + oración. |
+| `00009-eternal-life` | Juan 11:17-27 | Serie 6/6: Jesús es la resurrección; invitación final. |
+| `00010-god-is-in-control` | Daniel 2:20-22 + 1 Timoteo 2:1-6 | Dios controla todo, también la política; lo terrenal pasa; no preocuparse, orar por la nación y las autoridades. Puente: 1 Timoteo 2:5 (un solo Mediador). |
 
 ---
 
@@ -118,6 +150,9 @@ gods-word-teachings/
 │   │   │   ├── verse-card.css      # Tarjeta de versículo (NTV / RVR1960)
 │   │   │   ├── meaning-box.css     # Caja "¿Qué significa?"
 │   │   │   ├── bullet-list.css
+│   │   │   ├── passage.css         # Lectura completa del pasaje (números de versículo, "(1 de N)")
+│   │   │   ├── compare.css         # Dos columnas (ej. "Pasa" / "Permanece")
+│   │   │   ├── step-badge.css      # Número de paso del evangelio
 │   │   │   ├── progress.css        # Indicador 3 / 10
 │   │   │   └── home-menu.css       # Lista de la portada
 │   │   ├── 05-utilities.css        # Clases de ayuda pequeñas (.u-center, .u-hidden…)
@@ -131,6 +166,7 @@ gods-word-teachings/
 │   │   │   ├── deck.js             # Motor de diapositivas (ir a, siguiente, anterior)
 │   │   │   ├── fragments.js        # Revelado paso a paso dentro de una diapositiva
 │   │   │   ├── focus.js            # Foco entre elementos interactivos (↑ ↓ OK)
+│   │   │   ├── paging.js           # Portada por páginas (nunca desplazamiento): mide cuántas entran
 │   │   │   ├── progress.js         # Actualiza el indicador de posición
 │   │   │   ├── preload.js          # Precarga imágenes de la siguiente diapositiva
 │   │   │   ├── fullscreen.js       # Botón de pantalla completa (en la portada de cada presentación)
@@ -148,6 +184,8 @@ gods-word-teachings/
 │
 ├── tools/
 │   └── screen-info/index.html      # Diagnóstico de resolución de la TV
+│
+├── docs/legacy/                    # Reglas originales del proyecto PPT (solo referencia)
 │
 ├── 00001-who-is-god/
 │   ├── index.html                  # Contenido de la presentación (solo HTML semántico)
@@ -228,6 +266,7 @@ Respaldos:
 Las teclas siguen soportadas (teclado en la PC, o si algún modelo las entrega):
 - `←` / `→` (keyCode 37 / 39): paso o diapositiva anterior / siguiente. Primero se revelan los fragmentos y luego se pasa de diapositiva.
 - `↑` / `↓` (38 / 40): mover el foco entre elementos interactivos (en la portada, entre presentaciones).
+- **Nada se desplaza, todo se ve como una diapositiva** (pedido del usuario): si algo no entra, se divide en páginas o diapositivas. La portada muestra las presentaciones por páginas (`paging.js`): botones "‹ Anterior" / "Siguiente ›" y las teclas 1 / 2 cambian de página.
 - `OK` / `Enter` (13): activar el elemento enfocado.
 - Detectar con `event.keyCode` además de `event.key`, porque algunos motores antiguos no envían `key`.
 - Nada debe depender del hover. Todo lo interactivo debe funcionar con **clic** (puntero de la TV) y con teclado. **Foco muy visible**: borde grueso de alto contraste y ligera escala.
@@ -274,7 +313,10 @@ URL: `https://angeloravello.github.io/gods-word-teachings/` (Pages tarda 1–2 m
 - [ ] Carpeta con formato `NNNNN-english-name` y número correlativo.
 - [ ] Cada cita con libro, capítulo, versículo y versión; texto verificado y literal.
 - [ ] Toda lectura bíblica muestra NTV y justo después RVR1960 (mismo pasaje). Las citas breves o para recordar, solo en RVR1960.
-- [ ] Cada punto con su referencia.
+- [ ] Pasaje principal leído completo (NTV y luego RVR1960), con paginación "(1 de N)".
+- [ ] Cada punto con su versículo citado en pantalla y su referencia.
+- [ ] Termina con puente al evangelio (o los 6 pasos si es la lección de salvación).
+- [ ] Español neutro con "tú", sin voseo.
 - [ ] Máximo 3 viñetas por vista; textos cortos; letra en los tamaños mínimos.
 - [ ] Explicaciones visualmente separadas del texto bíblico.
 - [ ] Diapositiva de créditos con los avisos de NTV y RVR1960.

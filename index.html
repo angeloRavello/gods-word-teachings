@@ -17,13 +17,18 @@
   <script defer src="assets/js/core/version.js"></script>
   <script defer src="assets/js/core/keys.js"></script>
   <script defer src="assets/js/modules/focus.js"></script>
+  <script defer src="assets/js/modules/paging.js"></script>
   <script defer src="assets/js/modules/refresh.js"></script>
   <script defer src="assets/js/pages/home.js"></script>
 </head>
 <body>
 <main class="page">
-  <header class="slide__header">
+  <header class="slide__header home-menu__header">
     <h1 class="slide__title">Presentaciones</h1>
+    <div class="home-menu__meta">
+      <p class="home-menu__hint">Elige con el puntero y pulsa OK.</p>
+      <p class="home-menu__version" data-version></p>
+    </div>
   </header>
 
   <!-- Una entrada por presentación, en orden numérico -->
@@ -34,17 +39,73 @@
         <span class="home-menu__title">La buena noticia: ¿qué es evangelizar?</span>
       </a>
     </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00002-the-paralyzed-man/" data-focusable>
+        <span class="home-menu__number">2</span>
+        <span class="home-menu__title">Jesús sana a un paralítico</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00003-do-not-question-god/" data-focusable>
+        <span class="home-menu__number">3</span>
+        <span class="home-menu__title">Cuando no entendemos a Dios</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00004-the-trinity/" data-focusable>
+        <span class="home-menu__number">4</span>
+        <span class="home-menu__title">Un solo Dios, tres personas</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00005-god-the-father/" data-focusable>
+        <span class="home-menu__number">5</span>
+        <span class="home-menu__title">Dios Padre: el Padre que espera</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00006-god-the-son/" data-focusable>
+        <span class="home-menu__number">6</span>
+        <span class="home-menu__title">Dios Hijo: Jesús</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00007-the-holy-spirit/" data-focusable>
+        <span class="home-menu__number">7</span>
+        <span class="home-menu__title">Dios Espíritu Santo</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00008-salvation/" data-focusable>
+        <span class="home-menu__number">8</span>
+        <span class="home-menu__title">Lo que Dios quiere: salvarte</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00009-eternal-life/" data-focusable>
+        <span class="home-menu__number">9</span>
+        <span class="home-menu__title">Vida eterna</span>
+      </a>
+    </li>
+    <li class="home-menu__item">
+      <a class="home-menu__link" href="00010-god-is-in-control/" data-focusable>
+        <span class="home-menu__number">10</span>
+        <span class="home-menu__title">Dios tiene el control</span>
+      </a>
+    </li>
   </ol>
 
   <footer class="home-menu__footer">
-    <div>
-      <p class="home-menu__hint">Elige con el puntero y pulsa OK.</p>
-      <p class="home-menu__version" data-version></p>
-    </div>
+    <!-- Paginador: la lista nunca se desplaza, se muestra por páginas -->
+    <nav class="home-pager" data-pager>
+      <button class="home-pager__button" type="button" data-focusable data-page="prev">‹ Anterior</button>
+      <span class="home-pager__label" data-page-label></span>
+      <button class="home-pager__button" type="button" data-focusable data-page="next">Siguiente ›</button>
+    </nav>
     <!-- Herramientas técnicas: al final del recorrido del foco, separadas de las presentaciones -->
     <div class="home-menu__tools">
       <button class="home-menu__tool-link" type="button" data-focusable data-refresh>Actualizar</button>
-      <a class="home-menu__tool-link" href="tools/screen-info/" data-focusable>Diagnóstico de pantalla</a>
+      <a class="home-menu__tool-link" href="tools/screen-info/" data-focusable>Diagnóstico</a>
     </div>
   </footer>
 </main>

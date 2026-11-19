@@ -40,9 +40,24 @@
       height: 300vh;
     }
 
-    .diagnostics__log {
-      font-size: var(--font-size-ref);
+    /* Dos columnas: desplazamiento a la izquierda, teclas a la derecha */
+    .diagnostics__columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: var(--space-l);
+      margin-top: var(--space-m);
+    }
+
+    .diagnostics__heading {
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-bold);
       line-height: var(--line-height-text);
+    }
+
+    .diagnostics__log {
+      font-size: var(--font-size-small);
+      line-height: var(--line-height-text);
+      color: var(--color-text-muted);
     }
   </style>
 </head>
@@ -51,12 +66,22 @@
   <header class="slide__header u-mb-0">
     <h1 class="slide__title">Diagnóstico de pantalla</h1>
   </header>
-  <p class="slide__note" id="screen-info"></p>
-  <p class="diagnostics__log u-mt-l">Prueba: activa el modo desplazamiento (ícono de 4 flechas) y pulsa cada flecha <strong class="key">una sola vez</strong>, despacio.</p>
-  <ol class="diagnostics__log" id="scroll-log">
-    <li>Esperando…</li>
-  </ol>
-  <p class="slide__note" id="last-key">Tecla: ninguna todavía</p>
+  <p class="diagnostics__log" id="screen-info"></p>
+
+  <div class="diagnostics__columns">
+    <section>
+      <h2 class="diagnostics__heading">Modo desplazamiento: pulsa cada flecha una vez</h2>
+      <ol class="diagnostics__log" id="scroll-log">
+        <li>Esperando…</li>
+      </ol>
+    </section>
+    <section>
+      <h2 class="diagnostics__heading">Teclas que llegan a la página</h2>
+      <p class="diagnostics__log" id="last-key">Pulsa números, colores, CH+/CH−, Play…</p>
+      <p class="diagnostics__log" id="keys-seen"></p>
+    </section>
+  </div>
+
   <a class="slide__home-link is-focused" href="../../" id="home-link">Volver al inicio</a>
 </main>
 <div class="diagnostics__scroll-area" aria-hidden="true"></div>
@@ -66,7 +91,7 @@
 
     // Tiempo sin eventos que da por terminada una pulsación.
     var GESTURE_IDLE_MS = 500;
-    var MAX_LOG_LINES = 5;
+    var MAX_LOG_LINES = 6;
 
     var RECENTER_TIMEOUT_MS = 1500;
     var CENTER_TOLERANCE = 2;
@@ -82,12 +107,18 @@
       document.getElementById(id).textContent = text;
     }
 
+    // Versión corta del navegador (el userAgent completo no entra en pantalla).
+    function getBrowserName() {
+      var match = navigator.userAgent.match(/(Chrome|Firefox|Safari)\/[\d.]+/);
+      return match ? match[0] : navigator.userAgent;
+    }
+
     function renderInfo() {
       setText('screen-info',
         'Ventana ' + window.innerWidth + ' × ' + window.innerHeight +
         ' · DPR ' + window.devicePixelRatio +
         ' · Pantalla ' + screen.width + ' × ' + screen.height +
-        ' · ' + navigator.userAgent);
+        ' · ' + getBrowserName());
     }
 
     function renderLog() {
@@ -126,7 +157,7 @@
       // Si no llegan más eventos, no quedarse esperando para siempre.
       setTimeout(function () {
         if (recentering === current) {
-          addLogLine('(regreso al centro: ' + current.events + ' eventos, sin terminar, ignorado)');
+          addLogLine('(regreso: ' + current.events + ' ev · sin terminar · ignorado)');
           recentering = null;
         }
       }, RECENTER_TIMEOUT_MS + 100);
@@ -136,16 +167,16 @@
       recentering.events += 1;
       var elapsed = Date.now() - recentering.start;
       if (distanceToCenter() <= CENTER_TOLERANCE || elapsed > RECENTER_TIMEOUT_MS) {
-        addLogLine('(regreso al centro: ' + recentering.events + ' eventos, ' + elapsed + ' ms, ignorado)');
+        addLogLine('(regreso: ' + recentering.events + ' ev · ' + elapsed + ' ms · ignorado)');
         recentering = null;
       }
     }
 
     function directionName(dx, dy) {
       if (Math.abs(dx) >= Math.abs(dy)) {
-        return dx > 0 ? 'DERECHA →' : 'IZQUIERDA ←';
+        return dx > 0 ? '→' : '←';
       }
-      return dy > 0 ? 'ABAJO ↓' : 'ARRIBA ↑';
+      return dy > 0 ? '↓' : '↑';
     }
 
     function finishGesture() {
@@ -157,9 +188,8 @@
         return;
       }
       addLogLine(directionName(dx, dy) +
-        ': ' + gesture.scrollEvents + ' eventos scroll, ' +
-        gesture.wheelEvents + ' wheel, dx=' + dx + ', dy=' + dy +
-        ', ' + (Date.now() - gesture.start) + ' ms');
+        ' ' + gesture.scrollEvents + ' scroll · ' + gesture.wheelEvents + ' wheel · ' +
+        (Date.now() - gesture.start) + ' ms');
       gesture = null;
       centerScroll();
     }
@@ -185,9 +215,34 @@
       trackEvent('wheelEvents');
     });
 
-    document.addEventListener('keydown', function (event) {
-      setText('last-key', 'Tecla: key=' + (event.key || '(vacío)') + ' · keyCode=' + event.keyCode);
-    });
+    // Registro de todas las teclas distintas que llegan a la página, para
+    // decidir qué botones del control se pueden usar en las presentaciones.
+    var keysSeen = {};
+    var keysOrder = [];
+
+    function describeKey(event) {
+      return (event.key || '(sin key)') + ' [' + event.keyCode + ']';
+    }
+
+    function renderKeysSeen() {
+      var parts = keysOrder.map(function (id) {
+        return keysSeen[id].label + ' ×' + keysSeen[id].count;
+      });
+      setText('keys-seen', parts.length ? 'Detectadas: ' + parts.join(' · ') : '');
+    }
+
+    // En fase de captura, para verlas antes que cualquier otro código.
+    window.addEventListener('keydown', function (event) {
+      var id = event.key + '|' + event.keyCode;
+      if (!keysSeen[id]) {
+        keysSeen[id] = { label: describeKey(event), count: 0 };
+        keysOrder.push(id);
+      }
+      keysSeen[id].count += 1;
+      setText('last-key', 'Última: key=' + (event.key || '(vacío)') +
+        ' · keyCode=' + event.keyCode + ' · code=' + (event.code || '(vacío)'));
+      renderKeysSeen();
+    }, true);
 
     window.addEventListener('resize', renderInfo);
     renderInfo();

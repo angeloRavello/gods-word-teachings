@@ -52,11 +52,6 @@
   --space-xl: 4.5vw;
   --header-reserve-right: 14vw;
 
-  /* Pointer navigation buttons (fit inside the side safe margin) */
-  --nav-button-width: 4vw;
-  --nav-button-height: 24vh;
-  --nav-button-offset: 0.5vw;
-
   /* Shapes */
   --radius: 1vw;
   --radius-small: 0.4vw;

@@ -210,13 +210,17 @@ gods-word-teachings/
 
 ## Navegación con el control remoto
 
-**Comprobado en la TV real:** el navegador de Samsung NO entrega las flechas a la página. Tiene dos modos: **puntero** (las flechas mueven un cursor y OK hace clic) y **desplazamiento** (ícono de 4 direcciones; las flechas desplazan la página). Lo que sí llega a la página es el **clic** (modo puntero) y el **desplazamiento** (modo desplazamiento). Se usan los dos:
+**Comprobado en la TV real:** el navegador de Samsung NO entrega las flechas a la página. Tiene dos modos: **puntero** (las flechas mueven un cursor y OK hace clic) y **desplazamiento** (ícono de 4 direcciones; las flechas desplazan la página). Lo que sí llega a la página: las **teclas numéricas**, el **clic** y el **desplazamiento**.
+
+**Navegación principal: números del control** (`keys.js`): **1 = anterior, 2 = siguiente** (keyCode 49 / 50; también 97 / 98 del teclado numérico). Es la forma más rápida y no depende del modo del navegador.
+
+Respaldos:
 
 **Modo desplazamiento** (`assets/js/modules/scroll-nav.js`): la ventana se puede desplazar sobre un área invisible (`.has-scroll-nav`, `.scroll-nav__area`) y se mantiene centrada; todo el contenido visible es `position: fixed`. → o ↓ = siguiente, ← o ↑ = anterior. Medido en la TV: una pulsación es un desplazamiento animado de ~2 s con 100+ eventos `scroll`. Solo el primero dispara la acción y el resto se ignora hasta 400 ms sin eventos (una pulsación = un paso). La TV también anima el regreso al centro: esos eventos se ignoran hasta que la página llega al centro (máx. 1,5 s); si no, una pulsación avanzaría dos pasos.
 
 **Modo puntero** (`assets/js/modules/pointer.js`):
 - Clic en cualquier zona libre: 25 % izquierdo = anterior, el resto = siguiente. Basta con dejar el cursor a la derecha y pulsar OK.
-- Botones grandes `‹ ›` (`deck-nav`) en los márgenes laterales como guía visual, con `data-action="prev|next"`.
+- Sin botones `‹ ›` visibles en la presentación (se quitaron a pedido del usuario). Un elemento con `data-action="prev|next"` sigue funcionando si hiciera falta.
 - Los clics sobre enlaces y botones se dejan pasar (portada, "Volver al inicio", pantalla completa).
 - Todo clic se traduce a la misma acción `tv:action` que las teclas, así fragmentos y diapositivas se comportan igual.
 

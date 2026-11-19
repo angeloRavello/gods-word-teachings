@@ -6,5 +6,5 @@
 (function (window) {
   'use strict';
 
-  window.TV.version = '2026-11-19 11:42';
+  window.TV.version = '2026-11-19 12:06';
 })(window);

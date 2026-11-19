@@ -13,23 +13,28 @@ Presentaciones bíblicas en HTML para verlas en el navegador de una Smart TV Sam
 
 ## Controles
 
-**En la TV Samsung**, en **modo desplazamiento** (ícono de 4 flechas):
+**En la TV Samsung**, con los **números del control** (la forma recomendada):
+
+- **2**: avanzar.
+- **1**: volver.
+
+También funciona en **modo desplazamiento** (ícono de 4 flechas):
 
 - → o ↓: avanzar.
 - ← o ↑: volver.
 
 En **modo puntero** (cursor), OK hace clic:
 
-- Clic en la flecha `›` de la derecha, o en cualquier parte de la pantalla: avanzar.
-- Clic en la flecha `‹` de la izquierda, o en el borde izquierdo: volver.
+- Clic en cualquier parte de la pantalla: avanzar.
+- Clic en el borde izquierdo: volver.
 - En la portada de cada presentación, el botón "Iniciar pantalla completa" activa la pantalla completa. Para salir, se usa la tecla Volver del control.
 
 **En la PC**, con el teclado:
 
 | Tecla | Acción |
 | --- | --- |
-| → | Mostrar el siguiente paso o la siguiente diapositiva |
-| ← | Volver un paso |
+| → o 2 | Mostrar el siguiente paso o la siguiente diapositiva |
+| ← o 1 | Volver un paso |
 | ↑ / ↓ | Mover el foco (portada, botón "Volver al inicio") |
 | OK | Abrir el elemento enfocado o avanzar |
 

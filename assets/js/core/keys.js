@@ -9,7 +9,11 @@
   'use strict';
 
   // Algunos motores antiguos no envían event.key: por eso también usamos keyCode.
+  // Comprobado en la TV Samsung: el navegador NO entrega las flechas a la
+  // página, pero SÍ los números. Por eso 1 = anterior y 2 = siguiente.
   var KEY_NAME_TO_ACTION = {
+    '1': 'prev',
+    '2': 'next',
     ArrowLeft: 'prev',
     Left: 'prev',
     PageUp: 'prev',
@@ -25,6 +29,10 @@
   };
 
   var KEY_CODE_TO_ACTION = {
+    49: 'prev', // 1
+    97: 'prev', // 1 del teclado numérico
+    50: 'next', // 2
+    98: 'next', // 2 del teclado numérico
     37: 'prev',
     33: 'prev',
     39: 'next',

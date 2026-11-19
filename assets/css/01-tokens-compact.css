@@ -1,0 +1,35 @@
+/*
+ * 01-tokens-compact.css
+ * Compact size scale, matching the old PowerPoint decks (36 pt passage text
+ * on a 13.33 in slide = 3.75vw; 28-32 pt body text = 2.1-2.4vw).
+ * Loaded right after 01-tokens.css, only by presentations that opt in.
+ * It redefines size, measure and spacing tokens only; colors stay the same.
+ * Defines: no classes (custom properties only).
+ */
+:root {
+  /* Typography */
+  --font-size-cover: 4.6vw;
+  --font-size-title: 3.6vw;
+  --font-size-subtitle: 3vw;
+  --font-size-verse-large: 3.6vw;
+  --font-size-verse: 3vw;
+  --font-size-text: 2.8vw;
+  --font-size-ref: 2vw;
+  --font-size-small: 1.8vw;
+  --line-height-text: 1.35;
+  --measure-text: 60ch;
+  --measure-verse: 62ch;
+  --measure-wide: 75ch;
+
+  /* Spacing */
+  --space-xs: 0.4vw;
+  --space-s: 0.8vw;
+  --space-m: 1.5vw;
+  --space-l: 2.2vw;
+  --space-xl: 3.4vw;
+  --header-reserve-right: 11vw;
+
+  /* Images */
+  --illustration-size: 12vw;
+  --illustration-size-large: 17vw;
+}

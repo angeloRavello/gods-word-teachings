@@ -8,7 +8,7 @@
   'use strict';
 
   window.TV.version = {
-    number: 3,
-    date: '2026-11-19 16:46'
+    number: 4,
+    date: '2026-11-19 17:15'
   };
 })(window);
